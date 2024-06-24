@@ -1,0 +1,57 @@
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
+
+.gallery-preview {
+  margin: 1rem;
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &__image {
+    width: 50vw;
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  &__see-more {
+    text-decoration: none;
+    color: $Blink-Black;
+  }
+
+  &__see-more-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+}
+
+.slick-arrow {
+  color: transparent;
+  z-index: 6;
+}
+
+.slick-prev {
+  left: 0;
+  // background-image: url(../../assets/Icons/arrow_back.svg);
+}
+
+.slick-next {
+  right: 0;
+  // background-image: url(../../assets/Icons/arrow_prev.svg);
+}
+
+.slick-track {
+  margin: 0 auto;
+}
+
+// .slick-slide {
+//   margin: 0 auto;
+// }
+
+// .slick-list {
+//   padding: 0;
+// }

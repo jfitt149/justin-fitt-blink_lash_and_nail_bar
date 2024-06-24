@@ -1,9 +1,22 @@
 import "./Header.scss";
 import Hamburger from "../Hamburger/Hamburger";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
   const [hamburgerState, setHamburgerState] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setHamburgerState(false);
+  }, [location]);
+
+  const getClass = () => {
+    if (location.pathname !== "/") {
+      return "nav--filter";
+    }
+  };
 
   const toggleHamburger = () => {
     setHamburgerState(!hamburgerState);
@@ -12,39 +25,55 @@ function Header() {
   return (
     <header>
       <nav className="nav">
-        <a href="/index.html" className="nav__logo">
+        <Link
+          to={"/"}
+          // onClick={setHamburgerState(false)}
+          className="nav__logo-wrapper"
+        >
           <img
-            className="nav__logo"
-            src={"/src/assets//Images/logo.jpg"}
+            className={`nav__logo ${getClass()}`}
+            src={"/src/assets/Images/logo-header.svg"}
             alt="logo-img"
           />
-        </a>
+        </Link>
 
         <ul
           className="nav__list"
           style={{ display: `${hamburgerState ? "flex" : "none"}` }}
         >
           <li>
-            <a href="">Home</a>
+            <Link to={"/"}>
+              <p className="nav__list__item">Home</p>
+            </Link>
           </li>
           <li>
-            <a href="">Services</a>
+            <Link to={"/services"}>
+              <p className="nav__list__item">Services</p>
+            </Link>
           </li>
           <li>
-            <a href="">Gallery</a>
+            <Link to={"/gallery"}>
+              <p className="nav__list__item">Gallery</p>
+            </Link>
           </li>
           <li>
-            <a href="">About Us</a>
+            <Link to={"/About"}>
+              <p className="nav__list__item">About</p>
+            </Link>
           </li>
           <li>
-            <a href="">Contact</a>
+            <Link to={"/Contact"}>
+              <p className="nav__list__item">Contact</p>
+            </Link>
           </li>
           <li>
-            <a href="">BOOK NOW</a>
+            <Link to={"/BookNow"}>
+              <p className="nav__list__item">BOOK NOW</p>
+            </Link>
           </li>
         </ul>
-        <div className="hamburger" onClick={toggleHamburger}>
-          <Hamburger></Hamburger>
+        <div className={`hamburger ${getClass()}`} onClick={toggleHamburger}>
+          <Hamburger hamburgerState={hamburgerState}></Hamburger>
         </div>
       </nav>
       {/* <style src="/src/components/Header/Header.scss"></style> */}

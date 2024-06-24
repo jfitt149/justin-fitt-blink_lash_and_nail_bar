@@ -1,0 +1,30 @@
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $Blink-Black;
+  color: $Rose-White;
+  padding: 1rem;
+
+  &__list {
+    list-style-type: none;
+    &__item {
+      text-align: center;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__list a {
+    text-decoration: none;
+    color: $Rose-White;
+  }
+  &__copywrite {
+    text-align: center;
+    line-height: 1.5rem;
+  }
+}

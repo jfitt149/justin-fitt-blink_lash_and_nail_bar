@@ -1,5 +1,11 @@
-function Hamburger() {
-  return <div className="hamburger__icon"></div>;
+function Hamburger({ hamburgerState }) {
+  return (
+    <div
+      className={`${
+        hamburgerState ? "hamburger__icon--active" : "hamburger__icon--inactive"
+      }`}
+    ></div>
+  );
 }
 
 export default Hamburger;

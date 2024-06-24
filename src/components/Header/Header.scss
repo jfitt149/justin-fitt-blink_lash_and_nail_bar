@@ -5,25 +5,74 @@
 
 .nav {
   display: flex;
-  background-color: $Blink-Pink;
+  width: 100%;
+  justify-content: right;
+  height: auto;
+  position: absolute;
+  z-index: 4;
+
+  &__logo-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   &__logo {
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    align-self: center;
+    filter: invert(1) opacity(0.85);
+    // border-radius: 50%;
+    // margin-left: 1rem;
   }
 
   &__list {
     list-style-type: none;
     flex-direction: column;
+    align-self: baseline;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    position: absolute;
+    width: 100vw;
+    text-align: center;
+    background: white;
+    z-index: 3;
+
+    &__item {
+      padding: 0.25rem 0;
+      @include m-body-copy;
+    }
+  }
+  &__list a {
+    text-decoration: none;
+    color: $Blink-Black;
   }
 }
 
 .hamburger {
-  width: 100%;
-  &__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: brightness(2.5) opacity(0.85);
+  position: relative;
+  z-index: 4;
+  padding: 1rem 1rem 0 0;
+
+  &__icon--inactive {
     background-image: url(/src/assets/Icons/menu.svg);
     background-repeat: no-repeat;
-    width: 100%;
+    background-position: center;
     height: 100%;
+    filter: invert(1) opacity(0.85);
   }
+  &__icon--active {
+    background-image: url(/src/assets/Icons/close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    filter: grayscale(80%) brightness(56%) opacity(0.85);
+  }
+}
+
+.nav--filter {
+  filter: invert(0.4) opacity(0.85);
 }
