@@ -8,7 +8,7 @@ function HomePage() {
     <>
       <Hero></Hero>
       <GalleryPreview></GalleryPreview>
-      <FacebookFeatured></FacebookFeatured>
+      {/* <FacebookFeatured></FacebookFeatured> */}
     </>
   );
 }
