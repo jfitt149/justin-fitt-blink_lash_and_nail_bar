@@ -1,0 +1,36 @@
+@use "../../styles/partials/variables" as *;
+.form-wrapper {
+  //   margin: 0 1rem 1rem 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    margin-top: 1rem;
+  }
+  &__input {
+    margin-top: 0.25rem;
+    // border-radius: 1.25rem;
+    // height: 1.5rem;
+    // border: 1px solid $Silver;
+    border: 0.0625rem solid $Mercury;
+    background-color: $Alabaster;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 0.25rem;
+    &::placeholder {
+      color: $Blink-Black;
+    }
+    &:focus {
+      outline: 0.125rem solid $Blink-DarkPink;
+      background-color: $White;
+    }
+
+    &--text-area {
+      height: 4.5rem;
+    }
+  }
+}

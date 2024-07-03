@@ -3,9 +3,9 @@
 @import "../src/styles/partials/variables";
 
 #root {
-  background: #ffd7d7;
-  font-family: Avenir-Next-Regular;
-  color: #575c62;
+  background: $Blink-Pink;
+  font-family: Avenir-Next-Regular, sans-serif;
+  color: $Blink-Black;
   // @font-face {
   //   font-family: Avenir-Next-Regular;
   //   src: url(/src/assets/Font/AvenirNextLTPro-Regular.otf);
@@ -13,4 +13,16 @@
   //   font-weight: 400;
   //   color: #575c62;
   // }
+}
+
+.button {
+  margin-top: 1rem;
+  height: 2rem;
+  border-radius: 1.25rem;
+  background-color: $Rose-White;
+  border: none;
+  color: $Blink-Black;
+  &:hover {
+    background-color: #b4aead;
+  }
 }

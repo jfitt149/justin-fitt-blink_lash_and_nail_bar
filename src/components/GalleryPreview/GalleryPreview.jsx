@@ -65,6 +65,7 @@ function GalleryPreview() {
       </Slider>
       <div className="gallery-preview__see-more-wrapper">
         <Link className="gallery-preview__see-more" to={"/gallery"}>
+          {/* gallery-preview__see-more */}
           SEE MORE
         </Link>
       </div>

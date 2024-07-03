@@ -1,12 +1,11 @@
 import "./Contact.scss";
+import { Link } from "react-router-dom";
 import ContactForm from "../../components/ContactForm/ContactForm";
 
 function Contact() {
   return (
     <>
       <main className="contact">
-        <h1>Contat Us!</h1>
-        <ContactForm />
         <div className="contact__map-wrapper">
           {" "}
           <iframe
@@ -20,13 +19,28 @@ function Contact() {
           ></iframe>{" "}
         </div>
         <div className="contact__info">
-          <h2>Address: </h2>
-          <p>4702 Nova Scotia Trunk 3, Central Argyle, NS B0W 2M0</p>
-          <h2>Phone: </h2>
-          <p>+1 (902) 740-3160</p>
-          <h2>Email: </h2>
-          <p>madebymee@gmail.com</p>
+          <h2 className="contact__subheader">Address: </h2>
+          <a
+            href="https://maps.app.goo.gl/Vf3BHTzeAHCnKwj96"
+            className="contact__details contact__details--address"
+          >
+            <p>
+              4702 Nova Scotia Trunk 3 <br /> Central Argyle <br /> NS B0W 2M0
+            </p>
+          </a>
+
+          <h2 className="contact__subheader">Phone: </h2>
+          <a href="tel:19027403160" className="contact__link">
+            <p className="contact__details">+1 (902) 740-3160</p>
+          </a>
+          <h2 className="contact__subheader">Email: </h2>
+          <a href="mailto:madebymee@gmail.com" className="contact__link">
+            <p className="contact__details">madebymee@gmail.com</p>
+          </a>
         </div>
+        <h2 className="contact__title">Get in Touch: </h2>
+
+        <ContactForm />
       </main>
     </>
   );

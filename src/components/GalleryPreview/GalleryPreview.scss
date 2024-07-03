@@ -19,13 +19,24 @@
   &__see-more {
     text-decoration: none;
     color: $Blink-Black;
+    align-self: center;
   }
 
   &__see-more-wrapper {
-    width: 100%;
+    // width: 100%;
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
+    align-content: center;
+    // margin: auto;
+    margin-top: 1rem;
+    height: 2rem;
+    border-radius: 1.25rem;
+    background-color: $Rose-White;
+    border: none;
+    color: $Blink-Black;
+    &:hover {
+      background-color: #b4aead;
+    }
   }
 }
 
