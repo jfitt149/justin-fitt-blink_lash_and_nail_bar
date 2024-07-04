@@ -17,51 +17,22 @@ function GalleryPreview() {
     // prevArrow: <PrevArrow />,
   };
 
+  const numbOfGalleryItems = 6;
+
   return (
     <section className="gallery-preview slider-container">
       <Slider {...settings}>
-        <div className="gallery-preview__item">
-          <img
-            className="gallery-preview__image"
-            src="/src/assets/Images/gallery_1.jpg"
-            alt="nails-gallery-image-1"
-          />
-        </div>
-        <div className="gallery-preview__item">
-          <img
-            className="gallery-preview__image"
-            src="/src/assets/Images/gallery_2.jpg"
-            alt="nails-gallery-image-2"
-          />
-        </div>
-        <div className="gallery-preview__item">
-          <img
-            className="gallery-preview__image"
-            src="/src/assets/Images/gallery_3.jpg"
-            alt="nails-gallery-image-3"
-          />
-        </div>
-        <div className="gallery-preview__item">
-          <img
-            className="gallery-preview__image"
-            src="/src/assets/Images/gallery_4.jpg"
-            alt="nails-gallery-image-4"
-          />
-        </div>
-        <div className="gallery-preview__item">
-          <img
-            className="gallery-preview__image"
-            src="/src/assets/Images/gallery_5.jpg"
-            alt="nails-gallery-image-5"
-          />
-        </div>
-        <div className="gallery-preview__item">
-          <img
-            className="gallery-preview__image"
-            src="/src/assets/Images/gallery_6.jpg"
-            alt="nails-gallery-image-6"
-          />
-        </div>
+        {Array.from({ length: numbOfGalleryItems }, (_, i) => i + 1).map(
+          (number) => (
+            <div className="gallery-preview__item">
+              <img
+                className="gallery-preview__image"
+                src={`/src/assets/Images/gallery_${number}.jpg`}
+                alt={`nails-gallery-image-${number}`}
+              />
+            </div>
+          )
+        )}
       </Slider>
       <div className="gallery-preview__see-more-wrapper">
         <Link className="gallery-preview__see-more" to={"/gallery"}>

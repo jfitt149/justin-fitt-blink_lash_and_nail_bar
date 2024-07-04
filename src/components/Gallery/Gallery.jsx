@@ -1,7 +1,7 @@
 import "./Gallery.scss";
 
 function Gallery() {
-  const imageCount = 8;
+  const imageCount = 6;
   const imageNumbers = Array.from({ length: imageCount }, (_, i) => i + 1);
   return (
     <main className="gallery">

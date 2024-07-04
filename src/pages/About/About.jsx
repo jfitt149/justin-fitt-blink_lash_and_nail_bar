@@ -5,12 +5,12 @@ function About() {
     <main className="about">
       <h1 className="about__title">About</h1>
       <p className="about__content">
-        Welcome to Blink, where beauty meets expertise. Led by Jody, a licensed
-        and registered lash and nail technician, we are dedicated to enhancing
-        your natural beauty and ensuring you feel your absolute best. At Blink,
-        we offer a comprehensive range of services designed to cater to your
-        unique beauty needs, from luxurious lash extensions to exquisite nail
-        artistry and beyond. <br />
+        Welcome to Blink, where beauty meets expertise. Led by Jody Spinney, a
+        licensed and registered lash and nail technician, we are dedicated to
+        enhancing your natural beauty and ensuring you feel your absolute best.
+        At Blink, we offer a comprehensive range of services designed to cater
+        to your unique beauty needs, from luxurious lash extensions to exquisite
+        nail artistry and beyond. <br />
         <br /> Our commitment to excellence and personalized care ensures that
         each visit leaves you feeling pampered and revitalized. Whether you're
         looking to book an appointment for a specific service or simply explore
