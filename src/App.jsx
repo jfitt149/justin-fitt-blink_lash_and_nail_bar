@@ -12,8 +12,11 @@ import BookNow from "./pages/BookNow/BookNow";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import setHamburgerState from "./components/Hamburger/Hamburger";
 import Footer from "./components/Footer/Footer";
+import ServiceDetails from "./components/Booking/ServiceDetails/ServiceDetails";
+import Timeslot from "./components/Booking/Timeslot/Timeslot";
 
 function App() {
+  const [currentServices, setCurrentServices] = useState([]);
   setHamburgerState(false);
   return (
     <>
@@ -26,7 +29,25 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/booknow" element={<BookNow />} />
+          <Route
+            path="/booknow"
+            element={
+              <BookNow
+                currentServices={currentServices}
+                setCurrentServices={setCurrentServices}
+              />
+            }
+          />
+          <Route
+            path="/service-details"
+            element={
+              <ServiceDetails
+                currentServices={currentServices}
+                setCurrentServices={setCurrentServices}
+              />
+            }
+          />
+          <Route path="/timeslot" element={<Timeslot />}></Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer></Footer>

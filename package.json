@@ -11,14 +11,21 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@fullcalendar/core": "^6.1.14",
+    "@fullcalendar/daygrid": "^6.1.14",
+    "@fullcalendar/react": "^6.1.14",
+    "axios": "^1.7.2",
     "dotenv": "^16.4.5",
+    "node": "^22.4.0",
     "react": "^18.2.0",
+    "react-big-scheduler": "^0.2.7",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
     "react-slick": "^0.30.2",
     "react-social-media-embed": "^2.5.13",
     "sass": "^1.77.4",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "square": "^37.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

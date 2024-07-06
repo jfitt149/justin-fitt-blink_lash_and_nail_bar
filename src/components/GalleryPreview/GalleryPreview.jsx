@@ -24,7 +24,7 @@ function GalleryPreview() {
       <Slider {...settings}>
         {Array.from({ length: numbOfGalleryItems }, (_, i) => i + 1).map(
           (number) => (
-            <div className="gallery-preview__item">
+            <div key={number} className="gallery-preview__item">
               <img
                 className="gallery-preview__image"
                 src={`/src/assets/Images/gallery_${number}.jpg`}
