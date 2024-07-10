@@ -10,6 +10,7 @@ function Hero() {
           src="/src/assets/Images/logo.svg"
           alt="blink-lash-and-nail-bar-logo"
         />
+        <p className="hero__content--slogan">Where Elegance Meets Excellence</p>
       </div>
     </div>
   );

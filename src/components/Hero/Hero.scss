@@ -38,6 +38,12 @@
     padding-top: 3rem;
     // color: rgb(0, 0, 0);
     // text-align: center;
+    &--slogan {
+      color: white;
+      text-align: center;
+      padding-bottom: 1rem;
+      font-weight: bold;
+    }
   }
   &__logo {
     filter: invert(1) opacity(0.85);

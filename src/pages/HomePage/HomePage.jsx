@@ -1,5 +1,6 @@
 import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
+import ServicesPreview from "../../components/ServicesPreview/ServicesPreview";
 import GalleryPreview from "../../components/GalleryPreview/GalleryPreview";
 import FacebookFeatured from "../../components/FacebookFeatured/FacebookFeatured";
 import Contact from "../Contact/Contact";
@@ -9,6 +10,7 @@ function HomePage() {
   return (
     <>
       <Hero></Hero>
+      <ServicesPreview></ServicesPreview>
       <GalleryPreview></GalleryPreview>
       {/* <FacebookFeatured></FacebookFeatured> */}
       <Testimonials></Testimonials>

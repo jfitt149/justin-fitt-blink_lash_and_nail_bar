@@ -1,6 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./GalleryPreview.scss";
 import { PrevArrow, NextArrow } from "./SliderArrows/SliderArrows";
@@ -8,7 +9,7 @@ import { PrevArrow, NextArrow } from "./SliderArrows/SliderArrows";
 function GalleryPreview() {
   const settings = {
     // className: "center",
-    centerMode: true,
+    // centerMode: true,
     infinite: true,
     // centerPadding: "3rem",
     slidesToShow: 1,
@@ -21,6 +22,7 @@ function GalleryPreview() {
 
   return (
     <section className="gallery-preview slider-container">
+      <h2 className="gallery-preview__subheader">Check out our gallery!</h2>
       <Slider {...settings}>
         {Array.from({ length: numbOfGalleryItems }, (_, i) => i + 1).map(
           (number) => (

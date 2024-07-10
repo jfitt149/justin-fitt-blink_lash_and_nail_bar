@@ -5,7 +5,7 @@ import { useState } from "react";
 
 // import square from "square";
 
-function BookNow({ currentServices, setCurrentServices }) {
+function BookNow({ serviceItems, cancel, location, staff }) {
   // const parseBigInt = (jsonString) => {
   //   return JSON.parse(jsonString, (key, value) =>
   //     value && value.$bigint ? BigInt(value.$bigint) : value
@@ -22,8 +22,10 @@ function BookNow({ currentServices, setCurrentServices }) {
         ))}
       </div> */}
       <ServiceList
-        currentServices={currentServices}
-        setCurrentServices={setCurrentServices}
+        serviceItems={serviceItems}
+        cancel={cancel}
+        location={location}
+        staff={staff}
       ></ServiceList>
       {/* <ServiceDetails
         currentServices={currentServices}

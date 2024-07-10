@@ -1,44 +1,25 @@
 import "./ServiceList.scss";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  formatTime,
+  formatMoney,
+  getStaffInitials,
+  convertDateToText,
+  convertTimeToText,
+  getLocalTimezone,
+  stringifyJSON,
+  formatDateToParts,
+} from "../../../utils/functions";
+
+import { Link, useNavigate, useParams } from "react-router-dom";
 useNavigate;
 
-function ServiceList({ currentServices, setCurrentServices }) {
-  const [serviceItems, setServiceItems] = useState([]);
-
-  BigInt.prototype.toJSON = function () {
-    return { $bigint: this.toString() };
-  };
-
+function ServiceList({ serviceItems, cancel, location, staff }) {
   const navigate = useNavigate();
-
-  const getServiceItems = async () => {
-    try {
-      const response = await axios.get("http://localhost:8080/catalog");
-      // const parsedData = parseBigInt(JSON.stringify(response.data));
-      // const parsedData = JSON.stringify(response.data);
-
-      setServiceItems(response.data);
-      // setServiceItems(parsedData);
-      // console.log(serviceItems);
-      // console.log(parsedData);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getServiceItems();
-  }, []);
-
-  // useEffect(() => {
-  //   navigate("/service-details");
-  // }, [currentServices]);
 
   // const updateCurrentServices = (item) => {
   //   setCurrentServices((currentServices) => [...currentServices, item]);
   // };
+  console.log(serviceItems);
 
   const bookServiceHandler = (item) => {
     // updateCurrentServices(item);
@@ -46,55 +27,139 @@ function ServiceList({ currentServices, setCurrentServices }) {
     navigate("/service-details");
   };
 
-  if (!serviceItems) {
+  if (!serviceItems || !staff || !location) {
     return <div>Loading...</div>;
   }
 
-  // const renderServiceItem = (items) => {
-  //   if (typeof value === "object" && items !== null) {
-  //     return (
-  //       <ul>
-  //         {Object.entries(items).map(([key, item]) => (
-  //           <li key={key}>
-  //             <p>
-  //               {item.itemData.name}
-  //             </p>
-  //           </li>
-  //         ))}
-  //       </ul>
-  //     );
-  //   }
-  //   return items.toString();
-  // };
-  // console.log(serviceItems);
+  // const staffMember = staff[0];
+  // console.log(staffMember);
 
   return (
-    <main className="service-list">
-      <h1>Service List</h1>
-      {/* <div>
-        {serviceItems.map((serviceItem) => (
-          <div key={serviceItem.id}>
-            {serviceItem.itemData}
+    <>
+      <main>
+        <div className="content">
+          <div className="content-left business">
+            <div className="business__logo">
+              {location.logoUrl ? (
+                <img src={location.logoUrl}></img>
+              ) : (
+                <img src={"../../../assets/Images/logo.svg"}></img>
+              )}
+            </div>
+            <h3>{location.businessName || location.name}</h3>
+            {location.description ? <h5>{location.description}</h5> : ""}
+            <div className="business__location">
+              <h4>Location</h4>
+              <div>
+                {location.address ? (
+                  location.address.addressLine1 ? (
+                    <span>{location.address.addressLine1}</span>
+                  ) : (
+                    ""(
+                      location.address.addressLine2 ? (
+                        <span>{location.address.addressLine2}</span>
+                      ) : (
+                        ""
+                      )
+                    )(
+                      <span>
+                        {location.address.locality}
+                        {location.address.administrativeDistrictLevel1}
+                        {location.address.postalCode}
+                      </span>
+                    )
+                  )
+                ) : (
+                  <span>No location information</span>
+                )}
+              </div>
+              <div className="business__contact">
+                <h4>Contact</h4>
+                Email: <span>{location.businessEmail}</span>
+                <br />
+                Phone: <span>{location.phoneNumber}</span>
+              </div>
+              {cancel === "success" ? (
+                <div className="success-toast">
+                  <div>
+                    <img src={serverUrl + "images/success.svg"} alt="success" />
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="content-main services">
+              <h4> Book an appointment </h4>
+              <h4 className="title">Services</h4>
+              <h4 className="underline"></h4>
+              <div className="cards">
+                {serviceItems.map((item) =>
+                  item.itemData.variations.map((variation) => (
+                    // <a
+                    //   href={`/staff/${variation.id}?version=${variation.version}`}
+                    // >
+                    <Link
+                      key={item.id}
+                      to={`/availability/${staff.id}/${variation.id}`}
+                    >
+                      <div className="card__wrapper">
+                        <div className="card__info">
+                          <h4>
+                            {item.itemData.name} -{" "}
+                            {variation.itemVariationData.name}
+                          </h4>
+                          <h5 className="card__description">
+                            {item.itemData.description}
+                          </h5>
+                          <span className="card__details">
+                            {variation.itemVariationData.pricingType ===
+                            "FIXED_PRICING" ? (
+                              formatMoney(
+                                variation.itemVariationData.priceMoney.amount,
+                                variation.itemVariationData.priceMoney.currency
+                              )
+                            ) : (
+                              <p>Price Varies</p>
+                            )}
+                            <p>
+                              •{" "}
+                              {formatTime(
+                                variation.itemVariationData.serviceDuration
+                              )}
+                            </p>
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                    // {/* </a> */}
+                  ))
+                )}
+              </div>
+            </div>
           </div>
-        ))}
-      </div> */}
-      {serviceItems.map((serviceItem) => (
-        <div key={serviceItem.id}>
-          <p>{JSON.stringify(serviceItem.itemData.name)}</p>
-          <button
-            onClick={() => {
-              setCurrentServices((currentServices) => [
-                ...currentServices,
-                serviceItem,
-              ]);
-              bookServiceHandler(serviceItem);
-            }}
-          >
-            BOOK
-          </button>
         </div>
-      ))}
-    </main>
+      </main>
+    </>
+    // <main className="service-list">
+    //   <h1>Service List</h1>
+    //   {serviceItems.map((serviceItem) => (
+    //     <div key={serviceItem.id}>
+    //       <p>{serviceItem.itemData.name}</p>
+    //       <button
+    //         onClick={() => {
+    //           setCurrentServices((currentServices) => [
+    //             ...currentServices,
+    //             serviceItem,
+    //           ]);
+    //           bookServiceHandler(serviceItem);
+    //         }}
+    //       >
+    //         BOOK
+    //       </button>
+    //     </div>
+    //   ))}
+    // </main>
   );
 }
 
