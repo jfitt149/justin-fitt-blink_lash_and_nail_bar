@@ -29,7 +29,7 @@ function BookNow({ serviceItems, cancel, location, staff }) {
       ></ServiceList> */}
       <img
         className="coming-soon"
-        src="/public/assets/Images/coming_soon.jpg"
+        src="../../../assets/Images/coming_soon.jpg"
         alt="coming-soon"
       />
       {/* <ServiceDetails
