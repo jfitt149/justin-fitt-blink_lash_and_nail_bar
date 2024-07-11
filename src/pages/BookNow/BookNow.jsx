@@ -21,17 +21,17 @@ function BookNow({ serviceItems, cancel, location, staff }) {
           </div>
         ))}
       </div> */}
-      {/* <ServiceList
+      <ServiceList
         serviceItems={serviceItems}
         cancel={cancel}
         location={location}
         staff={staff}
-      ></ServiceList> */}
-      <img
+      ></ServiceList>
+      {/* <img
         className="coming-soon"
         src="../../../assets/Images/coming_soon.jpg"
         alt="coming-soon"
-      />
+      /> */}
       {/* <ServiceDetails
         currentServices={currentServices}
         setCurrentServices={setCurrentServices}

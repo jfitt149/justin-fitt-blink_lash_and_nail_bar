@@ -8,8 +8,8 @@ function ServicesPreview() {
     <section className="services-preview slider-container">
       <h2 className="services-preview__subheader">Our Services</h2>
       <p className="services-preview__content">
-        For perfectly polished hands and feet, radiant skin, stunning lashes and
-        brows, or a sun-kissed glow, Blink has everything you need to shine! 🌞
+        For perfectly polished hands and feet, radiant skin, stunning lashes, or
+        a sun-kissed glow, Blink has everything you need to shine! 🌞
       </p>
       <div className="services-preview__see-more-wrapper">
         <Link className="services-preview__see-more" to={"/services"}>

@@ -7,6 +7,7 @@ function Header() {
   const [hamburgerState, setHamburgerState] = useState(false);
 
   const location = useLocation();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     setHamburgerState(false);
@@ -32,7 +33,8 @@ function Header() {
         >
           <img
             className={`nav__logo ${getClass()}`}
-            src={"../../../assets/Images/logo-header.svg"}
+            git
+            src={`${apiUrl}/images/logo-header.svg`}
             alt="logo-img"
           />
         </Link>

@@ -19,6 +19,7 @@ function GalleryPreview() {
   };
 
   const numbOfGalleryItems = 6;
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   return (
     <section className="gallery-preview slider-container">
@@ -29,7 +30,7 @@ function GalleryPreview() {
             <div key={number} className="gallery-preview__item">
               <img
                 className="gallery-preview__image"
-                src={`../../../assets/Images/gallery_${number}.jpg`}
+                src={`${apiUrl}/images/gallery/gallery_${number}.jpg`}
                 alt={`nails-gallery-image-${number}`}
               />
             </div>
