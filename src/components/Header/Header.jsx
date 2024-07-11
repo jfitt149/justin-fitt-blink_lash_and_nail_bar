@@ -32,7 +32,7 @@ function Header() {
         >
           <img
             className={`nav__logo ${getClass()}`}
-            src={"/public/assets/Images/logo-header.svg"}
+            src={"../../../assets/Images/logo-header.svg"}
             alt="logo-img"
           />
         </Link>
