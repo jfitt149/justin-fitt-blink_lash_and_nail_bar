@@ -11,7 +11,7 @@ function Gallery() {
           <img
             key={num}
             className="gallery__image"
-            src={`/src/assets/Images/gallery_${num}.jpg`}
+            src={`/public/assets/Images/gallery_${num}.jpg`}
             alt={`gallery-image-${num}`}
           />
         ))}
