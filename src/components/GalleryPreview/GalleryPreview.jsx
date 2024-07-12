@@ -8,17 +8,17 @@ import { PrevArrow, NextArrow } from "./SliderArrows/SliderArrows";
 
 function GalleryPreview() {
   const settings = {
-    // className: "center",
-    // centerMode: true,
+    className: "center",
+    centerMode: true,
     infinite: true,
-    // centerPadding: "3rem",
+    centerPadding: "60px",
     slidesToShow: 1,
     speed: 500,
     // nextArrow: <NextArrow />,
     // prevArrow: <PrevArrow />,
   };
 
-  const numbOfGalleryItems = 6;
+  const numbOfGalleryItems = 5;
   const apiUrl = import.meta.env.VITE_API_URL;
 
   return (

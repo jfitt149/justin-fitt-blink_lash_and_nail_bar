@@ -1,7 +1,3 @@
-.service-list {
-  padding-top: 3rem;
-}
-
 @import url(https://square-fonts-production-f.squarecdn.com/square-sans.min.css);
 
 body {
@@ -86,11 +82,12 @@ a:visited {
 }
 
 .content-left {
-  width: 100%;
+  width: 35%;
   margin: 70px 30px;
 }
 
 .content-main {
+  width: 65%;
   margin: 70px 50px;
 }
 

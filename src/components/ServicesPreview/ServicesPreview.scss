@@ -5,8 +5,55 @@
 
 .services-preview {
   margin: 1rem;
+  &__subheader {
+    padding-top: 1rem;
+    @include dynamicFont(
+      600,
+      $fontsize-mob-page-header,
+      $lh-mob-page-header,
+      $Blink-Black
+    );
+  }
   &__content {
     padding-top: 1rem;
+    @include tablet {
+      padding-left: 1.5rem;
+    }
+    &--wrapper {
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  &__services {
+    padding-top: 1rem;
+    @include dynamicFont(
+      600,
+      $fontsize-mob-body-large,
+      $lh-mob-body-large,
+      $Blink-Black
+    );
+    @include tablet {
+      @include dynamicFont(
+        600,
+        $fontsize-td-body-large,
+        $lh-td-body-large,
+        $Blink-Black
+      );
+    }
+    &--wrapper {
+      text-decoration: none;
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__see-more {
     text-decoration: none;
@@ -28,6 +75,10 @@
     color: $Blink-Black;
     &:hover {
       background-color: #b4aead;
+    }
+    @include tablet {
+      min-width: 15rem;
+      align-self: center;
     }
   }
 }

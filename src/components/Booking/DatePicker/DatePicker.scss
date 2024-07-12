@@ -1,0 +1,7 @@
+.ui-datepicker-calendar tbody tr {
+  display: none;
+}
+
+.ui-datepicker-calendar tbody tr:first-child {
+  display: table-row;
+}

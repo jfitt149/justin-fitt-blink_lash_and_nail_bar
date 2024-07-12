@@ -18,19 +18,19 @@ import DatePicker from "../DatePicker/DatePicker";
 // import $ from "jquery";
 // import "jquery-ui/ui/widgets/datepicker";
 // import "jquery-ui/themes/base/all.css";
-// import FullCalendar from "@fullcalendar/react";
-// import dayGridPlugin from "@fullcalendar/daygrid";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
 
-// const events = [{ title: "Meeting", start: new Date() }];
+const events = [{ title: "Meeting", start: new Date() }];
 
-// function renderEventContent(eventInfo) {
-//   return (
-//     <>
-//       <b>{eventInfo.timeText}</b>
-//       <i>{eventInfo.event.title}</i>
-//     </>
-//   );
-// }
+function renderEventContent(eventInfo) {
+  return (
+    <>
+      <b>{eventInfo.timeText}</b>
+      <i>{eventInfo.event.title}</i>
+    </>
+  );
+}
 
 function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
   const [availability, setAvailability] = useState([]);
@@ -75,6 +75,10 @@ function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
   }
   const serviceId = serviceItem.id;
   const serviceVersion = serviceItem.version;
+
+  console.dir(events);
+  console.dir(availability);
+
   return (
     <>
       <div className="content">
@@ -121,18 +125,17 @@ function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
         </div>
       </div>
       <div className="content-main">
-        {/* <%- include('../partials/date-selector', { availabilities }); %> */}
-        <DatePicker
+        {/* <DatePicker
           availabilities={availability}
           serviceId={serviceId}
           serviceVersion={serviceVersion}
           serviceVariationId={serviceVariationId}
           // bookingId={bookingId}
           location={location}
-        ></DatePicker>
+        ></DatePicker> */}
       </div>
 
-      {/* <div className="calender">
+      <div className="calender">
         <h1>Demo App</h1>
         <FullCalendar
           plugins={[dayGridPlugin]}
@@ -141,7 +144,7 @@ function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
           events={events}
           eventContent={renderEventContent}
         />
-      </div> */}
+      </div>
     </>
   );
 }

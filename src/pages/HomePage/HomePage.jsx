@@ -11,10 +11,11 @@ function HomePage() {
     <>
       <Hero></Hero>
       <ServicesPreview></ServicesPreview>
-      <GalleryPreview></GalleryPreview>
+
       {/* <FacebookFeatured></FacebookFeatured> */}
       <Testimonials></Testimonials>
       <Contact></Contact>
+      <GalleryPreview></GalleryPreview>
     </>
   );
 }

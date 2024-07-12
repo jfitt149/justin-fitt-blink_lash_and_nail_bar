@@ -1,9 +1,11 @@
 import "./About.scss";
 
 function About() {
+  const apiUrl = import.meta.env.VITE_API_URL;
   return (
     <main className="about">
       <h1 className="about__title">About</h1>
+      <img className="about__img" src={`${apiUrl}images/jody.jpg`} alt="jody" />
       <p className="about__content">
         Welcome to Blink, where beauty meets expertise. Led by Jody Spinney, a
         licensed and registered lash and nail technician, we are dedicated to

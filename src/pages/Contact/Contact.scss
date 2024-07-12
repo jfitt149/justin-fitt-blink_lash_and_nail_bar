@@ -1,6 +1,9 @@
-@use "../../styles/partials/variables" as *;
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
 .contact {
-  padding: 3rem 1rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 
   &__map-wrapper {
     position: relative;
@@ -16,8 +19,22 @@
     width: 100% !important;
     height: 100% !important;
   }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    // flex-direction: column;
+    @include tablet {
+      display: auto;
+    }
+  }
   &__subheader {
     margin-top: 1rem;
+    @include dynamicFont(
+      600,
+      $fontsize-mob-sub-header,
+      $lh-mob-sub-header,
+      $Blink-Black
+    );
   }
   &__details {
     margin-top: 0.625rem;
@@ -32,6 +49,7 @@
       margin-top: 0.625rem;
     }
   }
+
   &__title {
     padding-top: 2rem;
   }
@@ -42,6 +60,10 @@
       text-decoration: underline;
     }
   }
+}
+
+.conditional-padding {
+  padding-top: 2rem;
 }
 
 // .map-container iframe {

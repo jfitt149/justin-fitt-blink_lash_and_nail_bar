@@ -7,13 +7,16 @@
   margin: 1rem;
   &__item {
     padding-top: 1rem;
+    width: 100%;
+
     display: flex !important;
     justify-content: center;
     align-items: center;
   }
   &__image {
-    width: 75%;
-    height: 100vw;
+    width: 90%;
+    height: 75vw;
+
     object-fit: cover;
   }
 

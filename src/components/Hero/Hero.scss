@@ -39,10 +39,10 @@
     // color: rgb(0, 0, 0);
     // text-align: center;
     &--slogan {
-      color: white;
       text-align: center;
       padding-bottom: 1rem;
-      font-weight: bold;
+      @include dynamicFont(600, 1.5rem, $lh-mob-sub-header, $White);
+      font-family: Allura;
     }
   }
   &__logo {
@@ -50,5 +50,78 @@
     position: relative;
     width: 100vw;
     height: 50vh;
+  }
+  &__statement {
+    margin: 1rem;
+    @include dynamicFont(
+      400,
+      $fontsize-mob-body-large,
+      $lh-mob-body-large,
+      $Blink-Black
+    );
+    @include tablet {
+      margin: 1.5rem;
+    }
+
+    &--bold {
+      font-weight: bold;
+      @include dynamicFont(
+        600,
+        $fontsize-mob-page-header,
+        $lh-mob-page-header,
+        $Blink-Black
+      );
+    }
+  }
+  &__img {
+    opacity: 0.8;
+    width: 100%;
+    @include tablet {
+      padding-right: 1.5rem;
+      padding-top: 1.5rem;
+      // width: 50%;
+      object-fit: contain;
+      box-sizing: border-box;
+    }
+  }
+  &__bottom {
+    @include tablet {
+      display: flex;
+    }
+    &--right {
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  &__see-more {
+    text-decoration: none;
+    color: $Blink-Black;
+    align-self: center;
+  }
+
+  &__see-more-wrapper {
+    // width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    // margin: auto;
+    margin: 1rem;
+    height: 2rem;
+    border-radius: 1.25rem;
+    background-color: $Rose-White;
+    border: none;
+    color: $Blink-Black;
+
+    &:hover {
+      background-color: #b4aead;
+    }
+    @include tablet {
+      min-width: 15rem;
+      margin-top: 1.5rem;
+    }
   }
 }
