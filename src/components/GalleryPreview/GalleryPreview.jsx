@@ -1,10 +1,8 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import "./GalleryPreview.scss";
-import { PrevArrow, NextArrow } from "./SliderArrows/SliderArrows";
 
 function GalleryPreview() {
   const settings = {
@@ -14,8 +12,6 @@ function GalleryPreview() {
     centerPadding: "60px",
     slidesToShow: 1,
     speed: 500,
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
   };
 
   const numbOfGalleryItems = 5;
@@ -39,7 +35,6 @@ function GalleryPreview() {
       </Slider>
       <div className="gallery-preview__see-more-wrapper">
         <Link className="gallery-preview__see-more" to={"/gallery"}>
-          {/* gallery-preview__see-more */}
           SEE MORE
         </Link>
       </div>

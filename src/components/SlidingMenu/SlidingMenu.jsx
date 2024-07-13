@@ -123,7 +123,6 @@ function SlidingMenu({
                 ? "/assets/Icons/arrow_back.svg"
                 : "/assets/Icons/arrow_forward.svg"
             }
-            // src="/assets/Icons/arrow_forward.svg"
             alt="arrow icon"
             onClick={toggleMenu}
           ></img>

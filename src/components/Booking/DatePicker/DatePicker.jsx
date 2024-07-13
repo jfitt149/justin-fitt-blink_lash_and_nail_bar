@@ -23,28 +23,11 @@ function DatePicker({
       location.timezone
     );
 
-    // const setWeekRange = (date) => {
-    //   const day = date.getDay();
-    //   const start = new Date(date);
-    //   start.setDate(start.getDate() - day);
-    //   const end = new Date(start);
-    //   end.setDate(start.getDate() + 6);
-    //   return { start, end };
-    // };
-
     $(datepickerRef.current).datepicker({
       beforeShowDay: (date) => datePickerHandler.isSelectable(date),
       dateFormat: "yy-mm-dd",
       minDate: 0,
       maxDate: "30d",
-      // beforeShow: function (input, inst) {
-      //   const currentDate = new Date();
-      //   const { start, end } = setWeekRange(currentDate);
-      //   $(this).datepicker("option", {
-      //     minDate: start,
-      //     maxDate: end,
-      //   });
-      // },
     });
 
     $(datepickerRef.current).on("change", function () {

@@ -1,10 +1,5 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {
-  formatTime,
-  convertDateToText,
-  convertTimeToText,
-} from "../../../utils/functions";
 import axios from "axios";
 import SlidingMenu from "../../SlidingMenu/SlidingMenu";
 import "./ContactDetails.scss";
@@ -24,28 +19,6 @@ function ContactDetails({ serviceItems, staff, location }) {
       [name]: value,
     }));
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const response = await axios.post();
-
-  //   // const response = await fetch("/booking", {
-  //   //   method: "POST",
-  //   //   headers: {
-  //   //     "Content-Type": "application/json",
-  //   //   },
-  //   //   body: JSON.stringify(formData),
-  //   // });
-
-  //   // if (response.ok) {
-  //   //   // Handle successful response
-  //   //   console.log("Appointment booked successfully");
-  //   // } else {
-  //   //   // Handle error response
-  //   //   console.error("Error booking appointment");
-  //   // }
-  // };
 
   const searchParams = new URLSearchParams(useLocation().search);
   const serviceId = searchParams.get("serviceId");
@@ -107,60 +80,6 @@ function ContactDetails({ serviceItems, staff, location }) {
         startAt={startAt}
       ></SlidingMenu>
       <div className="content">
-        {/* <div className="content-left">
-          <Link className="button" to={"/booknow"}>
-            <span className="icon back-arrow"></span>
-            Back
-          </Link>
-          <div className="steps">
-            <div className="steps__step-wrapper">
-              <div className="steps__step-title">
-                <span>Services</span>
-                <Link to={"/booknow"}>Edit</Link>
-              </div>
-              <div className="steps__step-body">
-                <div className="steps__step-name">
-                  {serviceItem.itemData.name}
-                </div>
-                <div className="steps__step-description">
-                  {formatTime(
-                    serviceItem.itemData.variations.find(
-                      (variation) => variation.id === serviceVariationId
-                    )?.itemVariationData.serviceDuration
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="steps__step">
-            <div className="steps__step-wrapper">
-              <div className="steps__step-title">
-                <span>Appointment time</span>
-                <Link
-                  to={`/availability/${staffId}/${serviceVariationId}?version=${serviceVersion}`}
-                >
-                  Edit
-                </Link>
-              </div>
-              <div className="steps__step-body">
-                <div className="steps__step-name">
-                  {convertDateToText(startAt, location.timezone)}
-                </div>
-                <div className="steps__step-description">
-                  {convertTimeToText(startAt, location.timezone)}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="steps__step selected">
-            <div className="steps__step-wrapper">
-              <div className="steps__step-title">
-                <span>Enter your details</span>
-                <span className="icon side-caret-selected"></span>
-              </div>
-            </div>
-          </div>
-        </div> */}
         <div className="content-main">
           <h2>Enter your details</h2>
           <form

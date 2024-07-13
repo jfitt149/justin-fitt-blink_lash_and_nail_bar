@@ -2,17 +2,13 @@ import "./ServiceList.scss";
 
 import { formatTime, formatMoney } from "../../../utils/functions";
 
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 useNavigate;
 
 function ServiceList({ serviceItems, cancel, location, staff }) {
   const navigate = useNavigate();
 
   console.log(serviceItems);
-
-  const bookServiceHandler = (item) => {
-    navigate("/service-details");
-  };
 
   if (!serviceItems || !staff || !location) {
     return <div>Loading...</div>;

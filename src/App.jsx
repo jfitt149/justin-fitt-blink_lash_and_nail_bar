@@ -13,13 +13,11 @@ import BookNow from "./pages/BookNow/BookNow";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import setHamburgerState from "./components/Hamburger/Hamburger";
 import Footer from "./components/Footer/Footer";
-import ServiceDetails from "./components/Booking/ServiceDetails/ServiceDetails";
 import Timeslot from "./components/Booking/Timeslot/Timeslot";
 import ContactDetails from "./components/Booking/ContactDetails/ContactDetails";
 import ConfirmBooking from "./components/Booking/ConfirmBooking/ConfirmBooking";
 
 function App() {
-  // const [currentServices, setCurrentServices] = useState([]);
   const [serviceItems, setServiceItems] = useState([]);
   const [cancel, setCancel] = useState([]);
   const [location, setLocation] = useState([]);
@@ -118,16 +116,6 @@ function App() {
               />
             }
           ></Route>
-          {/* <Route
-            path="/service-details"
-            element={
-              <ServiceDetails
-                currentServices={currentServices}
-                setCurrentServices={setCurrentServices}
-              />
-            }
-          />
-          <Route path="/timeslot" element={<Timeslot />}></Route> */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer></Footer>

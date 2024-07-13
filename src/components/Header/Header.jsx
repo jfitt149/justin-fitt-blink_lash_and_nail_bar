@@ -26,11 +26,7 @@ function Header() {
   return (
     <header>
       <nav className="nav">
-        <Link
-          to={"/"}
-          // onClick={setHamburgerState(false)}
-          className="nav__logo-wrapper"
-        >
+        <Link to={"/"} className="nav__logo-wrapper">
           <img
             className={`nav__logo ${getClass()}`}
             git
@@ -70,9 +66,7 @@ function Header() {
           </li>
           <li>
             <Link to={"/BookNow"}>
-              {/* <a href="https://squareupsandbox.com/appointments/buyer/widget/h9xjgl3ppwgwci/LRKJ0WTY1A225"> */}
               <p className="nav__list__item">BOOK NOW</p>
-              {/* </a> */}
             </Link>
           </li>
         </ul>
@@ -80,7 +74,6 @@ function Header() {
           <Hamburger hamburgerState={hamburgerState}></Hamburger>
         </div>
       </nav>
-      {/* <style src="/src/components/Header/Header.scss"></style> */}
     </header>
   );
 }

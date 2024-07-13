@@ -33,9 +33,7 @@ function Footer() {
           </li>
           <li>
             <Link to={"/BookNow"}>
-              {/* <a href="https://squareupsandbox.com/appointments/buyer/widget/h9xjgl3ppwgwci/LRKJ0WTY1A225"> */}
               <p className="footer__list__item">BOOK NOW</p>
-              {/* </a> */}
             </Link>
           </li>
         </ul>

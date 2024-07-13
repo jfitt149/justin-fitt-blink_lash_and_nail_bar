@@ -27,11 +27,9 @@
   }
 
   &__see-more-wrapper {
-    // width: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
-    // margin: auto;
     margin-top: 1rem;
     height: 2rem;
     border-radius: 1.25rem;
@@ -51,22 +49,12 @@
 
 .slick-prev {
   left: 0;
-  // background-image: url(../../assets/Icons/arrow_back.svg);
 }
 
 .slick-next {
   right: 0;
-  // background-image: url(../../assets/Icons/arrow_prev.svg);
 }
 
 .slick-track {
   margin: 0 auto;
 }
-
-// .slick-slide {
-//   margin: 0 auto;
-// }
-
-// .slick-list {
-//   padding: 0;
-// }

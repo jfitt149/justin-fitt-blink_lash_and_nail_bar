@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import "./ServicesPreview.scss";
 
 function ServicesPreview() {
-  const backendURL = import.meta.env.VITE_API_URL;
-
   return (
     <section className="services-preview slider-container">
       <h2 className="services-preview__subheader">Our Services</h2>
@@ -22,7 +20,6 @@ function ServicesPreview() {
           </p>
           <div className="services-preview__see-more-wrapper">
             <Link className="services-preview__see-more" to={"/services"}>
-              {/* gallery-preview__see-more */}
               VIEW SERVICES
             </Link>
           </div>

@@ -5,15 +5,7 @@ import { useEffect, useState } from "react";
 import "../../../utils/functions";
 import { formatDateToParts, getStaffInitials } from "../../../utils/functions";
 
-function ConfirmBooking({ location, staff, serviceItems }) {
-  //   const { bookingId, staffId, serviceVariationId, variationVersion } =
-  //     useParams();
-  //   const serviceItem = serviceItems.find((item) =>
-  //     item.itemData.variations.some(
-  //       (variation) => variation.id === serviceVariationId
-  //     )
-  //   );
-
+function ConfirmBooking({ location }) {
   const bookingId = useParams();
 
   const [booking, setBooking] = useState([]);
@@ -25,11 +17,9 @@ function ConfirmBooking({ location, staff, serviceItems }) {
 
   const getBooking = async () => {
     try {
-      console.log(bookingId.bookingId);
       const response = await axios.get(
         apiUrl + "booking/" + bookingId.bookingId
       );
-      console.log(response.data);
       setBooking(response.data.booking);
       setServiceItem(response.data.serviceItem);
       setServiceVariation(response.data.serviceVariation);
@@ -63,8 +53,6 @@ function ConfirmBooking({ location, staff, serviceItems }) {
   ) {
     return <div>Loading...</div>;
   }
-
-  console.log(serviceItem, booking, serviceVariation, teamMemberBookingProfile);
 
   return (
     <>

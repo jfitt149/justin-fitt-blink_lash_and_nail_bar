@@ -25,14 +25,6 @@ a:visited {
   color: $Blink-Black;
 }
 
-// .icon {
-//   width: 10px;
-//   height: 10px;
-//   display: inline-block;
-//   background-repeat: no-repeat;
-//   background-position: center;
-// }
-
 .icon.side-caret-selected {
   background-image: url("/images/side-caret-selected.svg");
 }
@@ -47,19 +39,14 @@ a:visited {
 }
 
 .content {
-  // max-width: 1200px;
-  // margin-left: auto;
-  // margin-right: auto;
   display: flex;
 }
 
 .content-left {
   width: 100%;
-  // margin: 70px 30px;
 }
 
 .content-main {
-  // margin: 70px 50px;
   margin: 0 1rem 1rem 1rem;
 }
 
@@ -201,8 +188,6 @@ a:visited {
   margin-top: 10px;
 }
 
-//
-
 .content__card {
   max-width: 500px;
   margin-top: 40px;
@@ -219,8 +204,6 @@ a:visited {
   color: #71767b;
   margin-top: 8px;
 }
-
-//
 
 .content__service.message-sm {
   margin-bottom: 0px;

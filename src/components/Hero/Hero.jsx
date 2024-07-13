@@ -39,7 +39,6 @@ function Hero() {
           />
           <div className="hero__see-more-wrapper">
             <Link className="hero__see-more" to={"/bookow"}>
-              {/* gallery-preview__see-more */}
               BOOK NOW
             </Link>
           </div>
