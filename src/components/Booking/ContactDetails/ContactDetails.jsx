@@ -30,7 +30,6 @@ function ContactDetails({ serviceItems, staff, location }) {
   const navigate = useNavigate();
 
   const serviceItem = serviceItems.find((item) => item.id === serviceId);
-  console.log(serviceItem);
   if (!serviceItem || !staff || !location) {
     return <div>Loading...</div>;
   }
@@ -39,7 +38,6 @@ function ContactDetails({ serviceItems, staff, location }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(JSON.stringify(formData));
     const createBooking = async () => {
       try {
         const response = await axios.post(
@@ -59,7 +57,6 @@ function ContactDetails({ serviceItems, staff, location }) {
             },
           }
         );
-        console.log(response.data);
         const bookingId = response.data;
         navigate("/booking/" + bookingId);
       } catch (error) {

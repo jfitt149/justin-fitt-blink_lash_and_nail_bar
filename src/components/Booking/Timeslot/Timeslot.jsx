@@ -6,18 +6,14 @@ import axios from "axios";
 import DatePicker from "../DatePicker/DatePicker";
 import SlidingMenu from "../../SlidingMenu/SlidingMenu";
 
-const events = [{ title: "Meeting", start: new Date() }];
-
 function Timeslot({ serviceItems, location, staff }) {
   const [availability, setAvailability] = useState([]);
   const { staffId, serviceVariationId } = useParams();
-  console.log(serviceVariationId);
   const serviceItem = serviceItems.find((item) =>
     item.itemData.variations.some(
       (variation) => variation.id === serviceVariationId
     )
   );
-  console.log(serviceItem);
 
   const serverUrl = import.meta.env.VITE_API_URL;
 
@@ -33,9 +29,8 @@ function Timeslot({ serviceItems, location, staff }) {
           serviceItem.version
       );
       setAvailability(response.data.availabilities);
-      console.log(response.data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

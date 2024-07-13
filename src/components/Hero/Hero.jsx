@@ -25,10 +25,10 @@ function Hero() {
           </span>
           <br />
           <br />
-          <p>
+          <span>
             Indulge in luxury and style with our professional treatments. Book
             your appointment today for the ultimate beauty experience.
-          </p>
+          </span>
         </p>
         <div className="hero__bottom--right">
           {" "}
