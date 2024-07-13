@@ -1,14 +1,19 @@
-// .ui-datepicker-calendar tbody tr {
-//   display: none;
-// }
-
-// .ui-datepicker-calendar tbody tr:first-child {
-//   display: table-row;
-// }
+.availability {
+  &__note {
+    padding-top: 1rem;
+  }
+}
 
 #available-times {
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   max-height: 27rem;
   flex-wrap: wrap;
+}
+
+#datepicker {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
 }

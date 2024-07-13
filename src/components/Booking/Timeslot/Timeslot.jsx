@@ -14,6 +14,7 @@ import {
   formatDateToParts,
 } from "../../../utils/functions";
 import DatePicker from "../DatePicker/DatePicker";
+import SlidingMenu from "../../SlidingMenu/SlidingMenu";
 
 // import $ from "jquery";
 // import "jquery-ui/ui/widgets/datepicker";
@@ -109,49 +110,11 @@ function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
 
   return (
     <>
-      <div className="content">
-        <div className="content-left">
-          <Link className="button" to={"/booknow"}>
-            <span className="icon back-arrow"></span>
-            Back
-          </Link>
-          <div className="steps">
-            <div className="steps__step-wrapper">
-              <div className="steps__step-title">
-                <span>Services</span>
-                <Link to={"/booknow"}>Edit</Link>
-              </div>
-              <div className="steps__step-body">
-                <div className="steps__step-name">
-                  {serviceItem.itemData.name}
-                </div>
-                <div className="steps__step-description">
-                  {formatTime(
-                    serviceItem.itemData.variations.find(
-                      (variation) => variation.id === serviceVariationId
-                    )?.itemVariationData.serviceDuration
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="steps__step selected">
-            <div className="steps__step-wrapper">
-              <div className="steps__step-title">
-                <span>Appointment time</span>
-                <span className="icon side-caret-selected"></span>
-              </div>
-            </div>
-          </div>
-          <div className="steps__step">
-            <div className="steps__step-wrapper">
-              <div className="steps__step-title">
-                <span>Enter your details</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SlidingMenu
+        serviceItem={serviceItem}
+        serviceVariationId={serviceVariationId}
+      ></SlidingMenu>
+
       <div className="content-main">
         <DatePicker
           availabilities={availability}
@@ -163,7 +126,7 @@ function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
         ></DatePicker>
       </div>
 
-      <div className="calender">
+      {/* <div className="calender">
         <h1>Demo App</h1>
         <FullCalendar
           key={calenderKey}
@@ -181,7 +144,7 @@ function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
             left: "dayGridWeek",
           }}
         />
-      </div>
+      </div> */}
     </>
   );
 }

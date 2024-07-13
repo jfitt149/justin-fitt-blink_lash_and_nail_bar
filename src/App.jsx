@@ -101,7 +101,11 @@ function App() {
           <Route
             path="/contactDetails"
             element={
-              <ContactDetails serviceItems={serviceItems} staff={staff} />
+              <ContactDetails
+                serviceItems={serviceItems}
+                staff={staff}
+                location={location}
+              />
             }
           ></Route>
           <Route

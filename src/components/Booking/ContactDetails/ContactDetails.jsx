@@ -1,20 +1,15 @@
-import { Link, useLocation, Navigate, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
   formatTime,
-  formatMoney,
-  getStaffInitials,
   convertDateToText,
   convertTimeToText,
-  getLocalTimezone,
-  stringifyJSON,
-  formatDateToParts,
 } from "../../../utils/functions";
 import axios from "axios";
+import SlidingMenu from "../../SlidingMenu/SlidingMenu";
 import "./ContactDetails.scss";
-// import { version } from "os";
 
-function ContactDetails({ serviceItems, staff }) {
+function ContactDetails({ serviceItems, staff, location }) {
   const [formData, setFormData] = useState({
     givenName: "",
     familyName: "",
@@ -103,8 +98,16 @@ function ContactDetails({ serviceItems, staff }) {
 
   return (
     <>
+      <SlidingMenu
+        serviceItem={serviceItem}
+        serviceVariationId={serviceVariationId}
+        staffId={staffId}
+        location={location}
+        serviceVersion={serviceVersion}
+        startAt={startAt}
+      ></SlidingMenu>
       <div className="content">
-        <div className="content-left">
+        {/* <div className="content-left">
           <Link className="button" to={"/booknow"}>
             <span className="icon back-arrow"></span>
             Back
@@ -157,15 +160,13 @@ function ContactDetails({ serviceItems, staff }) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="content-main">
-          <h4>Enter your details</h4>
+          <h2>Enter your details</h2>
           <form
             className="sq-form-control contact-form"
             method="POST"
-            // action={`/booking`}
             onSubmit={handleSubmit}
-            // action={`/booking/create?serviceId=${serviceVariationId}&staffId=${staffId}&version=${serviceVersion}&startAt=${startAt}`}
           >
             <input
               className="half-width"
@@ -208,7 +209,10 @@ function ContactDetails({ serviceItems, staff }) {
               onChange={handleChange}
             ></textarea>
 
-            <button className="button btn-primary" type="submit">
+            <button
+              className="contact-button contact-btn-primary"
+              type="submit"
+            >
               Book appointment
             </button>
           </form>

@@ -99,6 +99,7 @@ a:visited {
 
 .content-main {
   // margin: 70px 50px;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .button {
@@ -119,7 +120,7 @@ a:visited {
 
 .title {
   color: $Blink-Black;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   // margin: 38px 0px 0px 0px;
 }
 
@@ -142,19 +143,15 @@ a:visited {
 .card__wrapper {
   flex-direction: row;
   align-items: center;
-  padding: 32px;
-  left: 592px;
-  top: 254px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
-  border-radius: 12px;
   margin: 24px 0px 24px 0px;
   display: flex;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $Blink-Black;
 }
 
 .card__wrapper:hover {
-  border-color: #007fff;
+  border-color: $Rose-White;
 }
 
 .card__wrapper.disabled:hover {
@@ -181,9 +178,6 @@ a:visited {
 }
 
 .card__info {
-  margin-right: 20px;
-  position: static;
-  margin: 4px 20px 4px 0px;
   width: 95%;
 }
 

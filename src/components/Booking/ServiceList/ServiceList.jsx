@@ -1,15 +1,6 @@
 import "./ServiceList.scss";
 
-import {
-  formatTime,
-  formatMoney,
-  getStaffInitials,
-  convertDateToText,
-  convertTimeToText,
-  getLocalTimezone,
-  stringifyJSON,
-  formatDateToParts,
-} from "../../../utils/functions";
+import { formatTime, formatMoney } from "../../../utils/functions";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 useNavigate;
@@ -90,7 +81,7 @@ function ServiceList({ serviceItems, cancel, location, staff }) {
                 ""
               )}
             </div>
-            <div className="content-main services">
+            <div className="content-main">
               <h2> Book an appointment </h2>
               <h2 className="title">Services</h2>
               <h4 className="underline"></h4>

@@ -64,10 +64,10 @@ function DatePicker({
 
   return (
     <div className="availability">
-      <h4>Select appointment date</h4>
+      <h2>Select appointment date</h2>
       <div id="datepicker" ref={datepickerRef}></div>
-      <h4>Available Times</h4>
-      <p>
+      <h2>Available Times</h2>
+      <p className="availability__note">
         You can schedule an appointment between 4 hours and 30 days ahead of
         time.
       </p>
