@@ -15,13 +15,15 @@
 }
 
 .steps__step {
+  border-radius: none !important;
   border-bottom: 1px solid $Blink-Black;
   padding: 24px;
   margin-bottom: 16px;
 }
 .steps__step.selected {
-  border-bottom: 2px solid $Blink-DarkPink;
-  color: $Blink-Black;
+  border: none !important;
+  border-bottom: 2px solid $Blink-DarkPink !important;
+  color: $Blink-Black !important;
 }
 
 .steps__step.selected .steps__step-title {
@@ -37,6 +39,10 @@
   color: $Blink-Black;
   font-weight: bold;
   align-items: center;
+}
+
+.steps__step.selected .steps__step-title {
+  color: $Blink-DarkPink;
 }
 
 .steps__step-title a {

@@ -1,5 +1,5 @@
 import "./ConfirmBooking.scss";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../../../utils/functions";
@@ -43,8 +43,17 @@ function ConfirmBooking({ location, staff, serviceItems }) {
     getBooking();
   }, []);
 
-  //   const serviceId = serviceItem.id;
-  //   const serviceVersion = serviceItem.version;
+  const navigate = useNavigate();
+
+  const rescheduleHandler = () => {
+    alert("Please use contact form to reschedule your appointment.");
+    navigate("/Contact");
+  };
+
+  const cancelHandler = () => {
+    alert("Your appointment has been canceled.");
+    navigate("/");
+  };
 
   if (
     !serviceItem ||
@@ -59,7 +68,7 @@ function ConfirmBooking({ location, staff, serviceItems }) {
 
   return (
     <>
-      <div className="container">
+      <div className="confirm-container">
         <div className="content__service message">
           <h3>Thank you for booking with us</h3>
           <div className="content__service message-sm">
@@ -124,24 +133,21 @@ function ConfirmBooking({ location, staff, serviceItems }) {
               </div>
             </div>
             <div className="button__group">
-              <form
-                className="sq-form-control"
-                action="/booking/<%= booking.id %>/reschedule"
-                method="GET"
+              <button
+                className="confirm-button"
+                type="submit"
+                onClick={rescheduleHandler}
               >
-                <button className="button btn-primary" type="submit">
-                  Reschedule booking
-                </button>
-              </form>
-              <form
-                className="sq-form-control"
-                action="/booking/<%= booking.id %>/delete"
-                method="POST"
+                Reschedule booking
+              </button>
+
+              <button
+                className="confirm-button"
+                type="submit"
+                onClick={cancelHandler}
               >
-                <button className="button btn-secondary" type="submit">
-                  Cancel booking
-                </button>
-              </form>
+                Cancel booking
+              </button>
             </div>
           </div>
         </div>

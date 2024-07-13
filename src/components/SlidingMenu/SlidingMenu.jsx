@@ -87,10 +87,14 @@ function SlidingMenu({
                       className="steps__step-body"
                     >
                       <div className="steps__step-name">
-                        {convertDateToText(startAt, location.timezone)}
+                        {location && startAt
+                          ? convertDateToText(startAt, location.timezone)
+                          : ""}
                       </div>
                       <div className="steps__step-description">
-                        {convertTimeToText(startAt, location.timezone)}
+                        {location && startAt
+                          ? convertTimeToText(startAt, location.timezone)
+                          : ""}
                       </div>
                     </div>
                   </div>

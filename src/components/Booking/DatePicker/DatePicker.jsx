@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./DatePicker.scss";
-// import $ from "jquery";
-// import "jquery-ui/ui/widgets/datepicker";
-// import "jquery-ui/themes/base/all.css";
+// import "../../../assets/stylesheets/datepicker.css";
 import DatePickerHandler from "../../../utils/date-picker-handler";
 
 function DatePicker({

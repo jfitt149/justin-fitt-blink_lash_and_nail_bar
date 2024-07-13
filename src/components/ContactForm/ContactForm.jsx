@@ -77,7 +77,11 @@ function ContactForm() {
           }`}
           name="message"
         />
-        <input className="button" type="submit" value="Send" />
+        <input
+          className="services-preview__see-more-wrapper"
+          type="submit"
+          value="SEND"
+        />
       </form>
     </div>
   );
