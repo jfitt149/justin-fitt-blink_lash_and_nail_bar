@@ -1,4 +1,5 @@
 import { Link, useLocation, Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import {
   formatTime,
   formatMoney,
@@ -9,8 +10,48 @@ import {
   stringifyJSON,
   formatDateToParts,
 } from "../../../utils/functions";
+import axios from "axios";
+import "./ContactDetails.scss";
+// import { version } from "os";
 
 function ContactDetails({ serviceItems, staff }) {
+  const [formData, setFormData] = useState({
+    givenName: "",
+    familyName: "",
+    emailAddress: "",
+    customerNote: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const response = await axios.post();
+
+  //   // const response = await fetch("/booking", {
+  //   //   method: "POST",
+  //   //   headers: {
+  //   //     "Content-Type": "application/json",
+  //   //   },
+  //   //   body: JSON.stringify(formData),
+  //   // });
+
+  //   // if (response.ok) {
+  //   //   // Handle successful response
+  //   //   console.log("Appointment booked successfully");
+  //   // } else {
+  //   //   // Handle error response
+  //   //   console.error("Error booking appointment");
+  //   // }
+  // };
+
   const searchParams = new URLSearchParams(useLocation().search);
   const serviceId = searchParams.get("serviceId");
   const staffId = searchParams.get("staff");
@@ -25,6 +66,41 @@ function ContactDetails({ serviceItems, staff }) {
   if (!serviceItem || !staff || !location) {
     return <div>Loading...</div>;
   }
+
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(JSON.stringify(formData));
+    const createBooking = async () => {
+      try {
+        const response = await axios.post(
+          apiUrl + "booking/create",
+          {
+            givenName: formData.givenName,
+            familyName: formData.familyName,
+            emailAddress: formData.emailAddress,
+            customerNote: formData.customerNote,
+          },
+          {
+            params: {
+              serviceId: serviceVariationId,
+              staffId: staffId,
+              version: serviceVersion,
+              startAt: startAt,
+            },
+          }
+        );
+        console.log(response.data);
+        const bookingId = response.data;
+        navigate("/booking/" + bookingId);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    createBooking();
+  };
+
   return (
     <>
       <div className="content">
@@ -85,44 +161,54 @@ function ContactDetails({ serviceItems, staff }) {
         <div className="content-main">
           <h4>Enter your details</h4>
           <form
-            class="sq-form-control contact-form"
+            className="sq-form-control contact-form"
             method="POST"
-            action={`/booking/create?serviceId=${serviceVariationId}&staffId=${staffId}&version=${serviceVersion}&startAt=${startAt}`}
+            // action={`/booking`}
+            onSubmit={handleSubmit}
+            // action={`/booking/create?serviceId=${serviceVariationId}&staffId=${staffId}&version=${serviceVersion}&startAt=${startAt}`}
           >
             <input
-              class="half-width"
+              className="half-width"
               type="text"
               name="givenName"
               required
-              maxlength="50"
+              maxLength="50"
               placeholder="First name"
+              value={formData.givenName}
+              onChange={handleChange}
             />
             <input
-              class="half-width"
+              className="half-width"
               type="text"
               name="familyName"
               required
-              maxlength="50"
+              maxLength="50"
               placeholder="Last name"
+              value={formData.familyName}
+              onChange={handleChange}
             />
             <input
-              class="half-width"
+              className="half-width"
               name="emailAddress"
               required
-              maxlength="320"
+              maxLength="320"
               placeholder="Email"
+              value={formData.emailAddress}
+              onChange={handleChange}
               type="email"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              // pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               title="Invalid email address"
             />
             <textarea
               name="customerNote"
               placeholder="Appointment notes (optional)"
-              maxlength="1500"
+              maxLength="1500"
               rows="5"
+              value={formData.customerNote}
+              onChange={handleChange}
             ></textarea>
 
-            <button class="button btn-primary" type="submit">
+            <button className="button btn-primary" type="submit">
               Book appointment
             </button>
           </form>

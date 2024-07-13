@@ -16,6 +16,7 @@ import Footer from "./components/Footer/Footer";
 import ServiceDetails from "./components/Booking/ServiceDetails/ServiceDetails";
 import Timeslot from "./components/Booking/Timeslot/Timeslot";
 import ContactDetails from "./components/Booking/ContactDetails/ContactDetails";
+import ConfirmBooking from "./components/Booking/ConfirmBooking/ConfirmBooking";
 
 function App() {
   // const [currentServices, setCurrentServices] = useState([]);
@@ -101,6 +102,16 @@ function App() {
             path="/contactDetails"
             element={
               <ContactDetails serviceItems={serviceItems} staff={staff} />
+            }
+          ></Route>
+          <Route
+            path="/booking/:bookingId"
+            element={
+              <ConfirmBooking
+                location={location}
+                staff={staff}
+                serviceItems={serviceItems}
+              />
             }
           ></Route>
           {/* <Route

@@ -1,7 +1,14 @@
-.ui-datepicker-calendar tbody tr {
-  display: none;
-}
+// .ui-datepicker-calendar tbody tr {
+//   display: none;
+// }
 
-.ui-datepicker-calendar tbody tr:first-child {
-  display: table-row;
+// .ui-datepicker-calendar tbody tr:first-child {
+//   display: table-row;
+// }
+
+#available-times {
+  display: flex;
+  flex-direction: column;
+  max-height: 27rem;
+  flex-wrap: wrap;
 }

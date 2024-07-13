@@ -40,7 +40,7 @@ function ServiceList({ serviceItems, cancel, location, staff }) {
       <main>
         <div className="content">
           <div className="content-left business">
-            <div className="business__logo">
+            {/* <div className="business__logo">
               {location.logoUrl ? (
                 <img src={location.logoUrl}></img>
               ) : (
@@ -48,9 +48,9 @@ function ServiceList({ serviceItems, cancel, location, staff }) {
               )}
             </div>
             <h3>{location.businessName || location.name}</h3>
-            {location.description ? <h5>{location.description}</h5> : ""}
+            {location.description ? <h5>{location.description}</h5> : ""} */}
             <div className="business__location">
-              <h4>Location</h4>
+              {/* <h4>Location</h4>
               <div>
                 {location.address ? (
                   location.address.addressLine1 ? (
@@ -73,13 +73,13 @@ function ServiceList({ serviceItems, cancel, location, staff }) {
                 ) : (
                   <span>No location information</span>
                 )}
-              </div>
-              <div className="business__contact">
+              </div> */}
+              {/* <div className="business__contact">
                 <h4>Contact</h4>
                 Email: <span>{location.businessEmail}</span>
                 <br />
                 Phone: <span>{location.phoneNumber}</span>
-              </div>
+              </div> */}
               {cancel === "success" ? (
                 <div className="success-toast">
                   <div>
@@ -91,8 +91,8 @@ function ServiceList({ serviceItems, cancel, location, staff }) {
               )}
             </div>
             <div className="content-main services">
-              <h4> Book an appointment </h4>
-              <h4 className="title">Services</h4>
+              <h2> Book an appointment </h2>
+              <h2 className="title">Services</h2>
               <h4 className="underline"></h4>
               <div className="cards">
                 {serviceItems.map((item) =>

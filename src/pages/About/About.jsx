@@ -22,7 +22,7 @@ function About() {
         beauty goals. <br />
         <br />
         Cheers, <br />
-        The Blink Team
+        Jody
       </p>
     </main>
   );

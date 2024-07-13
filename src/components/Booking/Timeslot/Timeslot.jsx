@@ -20,6 +20,7 @@ import DatePicker from "../DatePicker/DatePicker";
 // import "jquery-ui/themes/base/all.css";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
 
 const events = [{ title: "Meeting", start: new Date() }];
 
@@ -27,13 +28,17 @@ function renderEventContent(eventInfo) {
   return (
     <>
       <b>{eventInfo.timeText}</b>
-      <i>{eventInfo.event.title}</i>
+      {/* <i>{eventInfo.event.title}</i> */}
     </>
   );
 }
 
 function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
   const [availability, setAvailability] = useState([]);
+  const [calenderView, setCalenderView] = useState("dayGridWeek");
+  const [calenderKey, setCalenderKey] = useState(0);
+  const [calenderDate, setCalenderDate] = useState();
+  const [formattedEvents, setFormattedEvents] = useState([]);
   const { staffId, serviceVariationId, variationVersion } = useParams();
   console.log(serviceVariationId);
   const serviceItem = serviceItems.find((item) =>
@@ -76,8 +81,31 @@ function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
   const serviceId = serviceItem.id;
   const serviceVersion = serviceItem.version;
 
-  console.dir(events);
-  console.dir(availability);
+  const formatEvents = (events) => {
+    return events.map((event) => {
+      const { startAt, appointmentSegments } = event;
+      const durationMinutes = appointmentSegments[0].durationMinutes;
+      const endAt = new Date(
+        new Date(startAt).getTime() + durationMinutes * 60000
+      ).toISOString();
+
+      return {
+        start: startAt,
+        end: endAt,
+        title: "Appointment Time",
+      };
+    });
+  };
+
+  const handleDateClick = (event) => {
+    setCalenderView("dayGridDay");
+    setCalenderKey((calenderKey) => calenderKey + 1);
+    setFormattedEvents(formatEvents(availability));
+    setCalenderDate(event.date);
+    console.log(event);
+  };
+
+  const handleEventClick = (event) => {};
 
   return (
     <>
@@ -125,24 +153,33 @@ function Timeslot({ serviceItems, cancel, location, staff, bookingId }) {
         </div>
       </div>
       <div className="content-main">
-        {/* <DatePicker
+        <DatePicker
           availabilities={availability}
           serviceId={serviceId}
           serviceVersion={serviceVersion}
           serviceVariationId={serviceVariationId}
           // bookingId={bookingId}
           location={location}
-        ></DatePicker> */}
+        ></DatePicker>
       </div>
 
       <div className="calender">
         <h1>Demo App</h1>
         <FullCalendar
-          plugins={[dayGridPlugin]}
-          initialView="dayGridMonth"
+          key={calenderKey}
+          plugins={[dayGridPlugin, interactionPlugin]}
+          // initialView="dayGridDay"
+          initialView={calenderView}
+          initialDate={calenderDate}
           weekends={false}
-          events={events}
+          events={formattedEvents}
           eventContent={renderEventContent}
+          eventClick={handleEventClick}
+          dateClick={handleDateClick}
+          // editable={true}
+          headerToolbar={{
+            left: "dayGridWeek",
+          }}
         />
       </div>
     </>
