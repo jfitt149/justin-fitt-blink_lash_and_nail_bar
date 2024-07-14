@@ -2,8 +2,39 @@
 ## Overview
 This web app will serve as a platform for customers of Blink lash and nail bar to be able to view the nail artists portfolio pictures, see lists of services and prices as well as list contact information and have a contact form.
 
+## Installation
+
+### 1. Clone the Repository
+
+Clone the project repository to your local machine using the following command:
+
+    git clone https://github.com/jfitt149/justin-fitt-blink_lash_and_nail_bar.git
+    
+### 2. Navigate to the Project Directory
+
+Change to the project directory:
+
+    cd justin-fitt-blink_lash_and_nail_bar
+
+### 3. Install Dependencies
+
+Install the required dependencies using npm:
+
+    npm install
+
+
+### 4. Setting Environment Variables
+
+Create a `.env` file in the root directory of your project and add the necessary environment variables. Use the provided `.env.example` file as a reference.
+
+### 5. Start the Project
+
+Run the following command to run the project in development mode:
+
+    npm run dev
+
 ## Problem
-The web app is needed becasue having an online presence will increase business for the nail bar.
+The web app is needed because having an online presence will increase business for the nail bar.
 
 ## User Profile
 ### Existing customers:
