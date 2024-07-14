@@ -1,0 +1,28 @@
+@import "../../styles/partials/variables";
+
+@font-face {
+  font-family: Avenir-Next-Regular;
+  src: url(/src/assets/Font/AvenirNextLTPro-Regular.otf);
+  src: url(/src/assets/Font/Alternative-files/AvenirNextLTPro.ttf);
+  font-weight: 400;
+  color: $Blink-Black;
+}
+
+@font-face {
+  font-family: Avenir-Next-Demi;
+  src: url(/src/assets/Font/AvenirNextLTPro-Demi.otf);
+  src: url(/src/assets/Font/Alternative-files/AvenirNextLTProDemi.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Avenir-Next-Bold;
+  src: url(/src/assets/Font/AvenirNextLTPro-Bold.otf);
+  src: url(/src/assets/Font/Alternative-files/AvenirNextLTProBold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Allura, sans-serif;
+  src: url(/src/assets/Font/Allura-Regular.ttf);
+}

@@ -1,0 +1,66 @@
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
+.contact {
+  padding: 1rem 1rem 1rem 1rem;
+
+  &__map-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Maintain aspect ratio (16:9) */
+    height: 0;
+    overflow: hidden;
+    margin: 1rem -1rem 0 -1rem;
+  }
+  &__map-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      display: auto;
+    }
+  }
+  &__subheader {
+    margin-top: 1rem;
+    @include dynamicFont(
+      600,
+      $fontsize-mob-sub-header,
+      $lh-mob-sub-header,
+      $Blink-Black
+    );
+  }
+  &__details {
+    margin-top: 0.625rem;
+    &--address {
+      text-decoration: none;
+      color: $Blink-Black;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &--address p {
+      margin-top: 0.625rem;
+    }
+  }
+
+  &__title {
+    padding-top: 2rem;
+  }
+  &__link {
+    text-decoration: none;
+    color: $Blink-Black;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.conditional-padding {
+  padding-top: 2rem;
+}

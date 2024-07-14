@@ -1,0 +1,82 @@
+@import "../partials/variables";
+@import "../partials/typography";
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin m-page-header {
+  font-family: Avenir-Next-Bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@mixin m-section-header {
+  font-family: Avenir-Next-Bold;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+@mixin m-subheader {
+  font-family: Avenir-Next-Bold;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+
+@mixin m-body-copy {
+  font-family: Avenir-Next-Regular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+
+@mixin m-labels-buttons {
+  font-family: Avenir-Next-Bold;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+}
+
+@mixin d-page-header {
+  font-family: Avenir-Next-Bold;
+  font-size: 2.0625rem;
+  line-height: 2.75rem;
+}
+
+@mixin d-section-header {
+  font-family: Avenir-Next-Bold;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+@mixin d-subheader {
+  font-family: Avenir-Next-Bold;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+@mixin d-body-copy {
+  font-family: Avenir-Next-Regular;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+@mixin d-labels-buttons {
+  font-family: Avenir-Next-Bold;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+@mixin dynamicFont($weight, $size, $line-height, $color) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  font-family: "Avenir-Next-Regular", sans-serif;
+}

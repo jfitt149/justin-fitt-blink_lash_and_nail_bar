@@ -1,0 +1,24 @@
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
+
+.services {
+  padding-top: 3rem;
+  margin: 0 1rem 1rem 1rem;
+  &__title {
+    margin-top: 1rem;
+  }
+  &__subtitle {
+    margin: 1rem 0;
+  }
+  &__img {
+    width: 100%;
+    max-height: 75vw;
+    object-fit: cover;
+    margin-top: 1rem;
+  }
+  &__item {
+    line-height: 1.5rem;
+  }
+}

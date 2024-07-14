@@ -1,0 +1,60 @@
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
+
+.gallery-preview {
+  margin: 1rem;
+  &__item {
+    padding-top: 1rem;
+    width: 100%;
+
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  &__image {
+    width: 90%;
+    height: 75vw;
+
+    object-fit: cover;
+  }
+
+  &__see-more {
+    text-decoration: none;
+    color: $Blink-Black;
+    align-self: center;
+  }
+
+  &__see-more-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1rem;
+    height: 2rem;
+    border-radius: 1.25rem;
+    background-color: $Rose-White;
+    border: none;
+    color: $Blink-Black;
+    &:hover {
+      background-color: #b4aead;
+    }
+  }
+}
+
+.slick-arrow {
+  color: $Blink-Black !important;
+  z-index: 6;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-track {
+  margin: 0 auto;
+}

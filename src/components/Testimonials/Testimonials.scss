@@ -1,0 +1,21 @@
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
+
+.testimonials {
+  padding: 1rem;
+
+  &__subheader {
+    @include dynamicFont(
+      600,
+      $fontsize-mob-page-header,
+      $lh-mob-page-header,
+      $Blink-Black
+    );
+  }
+
+  &__widget {
+    padding-top: 1rem;
+  }
+}

@@ -1,0 +1,36 @@
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
+
+h2 {
+  padding-top: 1.5rem;
+  @include dynamicFont(
+    600,
+    $fontsize-mob-page-header,
+    $lh-mob-page-header,
+    $Blink-Black
+  );
+}
+
+.availability button.available-time {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: $Blink-Black;
+  cursor: pointer;
+  float: left;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  list-style-type: none;
+  margin: 7px;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 10px;
+  width: 120px;
+}
+
+.availability button.available-time:hover {
+  border-color: $Blink-DarkPink;
+}
