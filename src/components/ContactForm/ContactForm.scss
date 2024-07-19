@@ -1,8 +1,26 @@
-@use "../../styles/partials/variables" as *;
+@import "../src/styles/partials/global";
+@import "../src/styles/partials/mixins";
+@import "../src/styles/partials/typography";
+@import "../src/styles/partials/variables";
 
 .form {
   display: flex;
   flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  &--left {
+    @include tablet {
+      width: 100%;
+    }
+  }
+  &--right {
+    @include tablet {
+      width: 100%;
+      margin-left: 1rem;
+    }
+  }
   &__label {
     margin-top: 1rem;
   }
@@ -27,6 +45,10 @@
       height: 4.5rem;
     }
   }
+}
+
+.services-preview__see-more-wrapper {
+  margin: 1rem auto;
 }
 
 .error {

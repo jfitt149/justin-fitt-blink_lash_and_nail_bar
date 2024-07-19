@@ -58,30 +58,34 @@ function ContactForm() {
   return (
     <div className="form-wrapper">
       <form className="form" ref={form} onSubmit={sendEmail}>
-        <label className="form__label">Name</label>
-        <input
-          className={`form__input ${emptyFields.name ? "error" : ""}`}
-          type="text"
-          name="user_name"
-        />
-        <label className="form__label">Email</label>
-        <input
-          className={`form__input ${emptyFields.email ? "error" : ""}`}
-          type="email"
-          name="user_email"
-        />
-        <label className="form__label">Message</label>
-        <textarea
-          className={`form__input form__input--text-area ${
-            emptyFields.message ? "error" : ""
-          }`}
-          name="message"
-        />
-        <input
-          className="services-preview__see-more-wrapper"
-          type="submit"
-          value="SEND"
-        />
+        <div className="form--left">
+          <label className="form__label">Name</label>
+          <input
+            className={`form__input ${emptyFields.name ? "error" : ""}`}
+            type="text"
+            name="user_name"
+          />
+          <label className="form__label">Email</label>
+          <input
+            className={`form__input ${emptyFields.email ? "error" : ""}`}
+            type="email"
+            name="user_email"
+          />
+        </div>
+        <div className="form--right">
+          <label className="form__label">Message</label>
+          <textarea
+            className={`form__input form__input--text-area ${
+              emptyFields.message ? "error" : ""
+            }`}
+            name="message"
+          />
+          <input
+            className="services-preview__see-more-wrapper"
+            type="submit"
+            value="SEND"
+          />
+        </div>
       </form>
     </div>
   );

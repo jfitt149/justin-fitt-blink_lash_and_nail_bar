@@ -10,11 +10,18 @@
   height: auto;
   position: absolute;
   z-index: 4;
+  @include tablet {
+    justify-content: space-between;
+  }
 
   &__logo-wrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    @include tablet {
+      z-index: 4;
+      left: 5%;
+    }
   }
 
   &__logo {
@@ -22,6 +29,9 @@
     width: 6rem;
     align-self: center;
     filter: invert(1) opacity(0.85);
+    @include tablet {
+      filter: invert(0.55) opacity(0.85);
+    }
   }
 
   &__list {
@@ -36,9 +46,27 @@
     background: $Rose-White;
     z-index: 3;
 
+    &--open {
+      display: flex;
+    }
+
+    &--closed {
+      display: none;
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
     &__item {
       padding: 0.25rem 0;
       @include m-body-copy;
+
+      @include tablet {
+        padding-right: 1rem;
+      }
     }
   }
   &__list a {
@@ -68,6 +96,10 @@
     background-position: center;
     height: 100%;
     filter: grayscale(80%) brightness(56%) opacity(0.85);
+  }
+
+  @include tablet {
+    display: none;
   }
 }
 

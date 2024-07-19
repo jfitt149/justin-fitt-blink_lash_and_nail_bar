@@ -7,6 +7,10 @@
   margin: 0 1rem 1rem 1rem;
   padding-top: 3rem;
 
+  @include tablet {
+    padding-top: 5rem;
+  }
+
   &__title {
     margin-top: 1rem;
   }

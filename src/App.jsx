@@ -66,58 +66,60 @@ function App() {
     <>
       <BrowserRouter>
         <Header></Header>
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/booknow"
+              element={
+                <BookNow
+                  serviceItems={serviceItems}
+                  cancel={cancel}
+                  location={location}
+                  staff={staff}
+                />
+              }
+            />
+            <Route
+              path="/availability/:staffId/:serviceVariationId"
+              element={
+                <Timeslot
+                  serviceItems={serviceItems}
+                  cancel={cancel}
+                  location={location}
+                  staff={staff}
+                  bookingId={bookingId}
+                />
+              }
+            ></Route>
+            <Route
+              path="/contactDetails"
+              element={
+                <ContactDetails
+                  serviceItems={serviceItems}
+                  staff={staff}
+                  location={location}
+                />
+              }
+            ></Route>
+            <Route
+              path="/booking/:bookingId"
+              element={
+                <ConfirmBooking
+                  location={location}
+                  staff={staff}
+                  serviceItems={serviceItems}
+                />
+              }
+            ></Route>
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div>
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route
-            path="/booknow"
-            element={
-              <BookNow
-                serviceItems={serviceItems}
-                cancel={cancel}
-                location={location}
-                staff={staff}
-              />
-            }
-          />
-          <Route
-            path="/availability/:staffId/:serviceVariationId"
-            element={
-              <Timeslot
-                serviceItems={serviceItems}
-                cancel={cancel}
-                location={location}
-                staff={staff}
-                bookingId={bookingId}
-              />
-            }
-          ></Route>
-          <Route
-            path="/contactDetails"
-            element={
-              <ContactDetails
-                serviceItems={serviceItems}
-                staff={staff}
-                location={location}
-              />
-            }
-          ></Route>
-          <Route
-            path="/booking/:bookingId"
-            element={
-              <ConfirmBooking
-                location={location}
-                staff={staff}
-                serviceItems={serviceItems}
-              />
-            }
-          ></Route>
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
         <Footer></Footer>
       </BrowserRouter>
     </>

@@ -8,18 +8,22 @@
   display: flex;
   flex-direction: column;
   margin: 0 1rem 1rem;
+  align-items: center;
+  @include tablet {
+    padding-top: 7rem;
+  }
 }
 
 .steps,
 .staff {
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 
 .steps__step-title {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
   letter-spacing: 0.009em;
   color: rgba(0, 0, 0, 0.55);
   font-weight: bold;
@@ -32,22 +36,22 @@
 
 .steps__step-name,
 .staff__card-name {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: black;
-  line-height: 26px;
+  line-height: 1.625rem;
   letter-spacing: 0.006em;
   font-weight: bold;
 }
 
 .staff__card-description {
   color: rgba(113, 118, 123, 1);
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 
 .staff__card {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   align-items: center;
 }
 
@@ -62,26 +66,26 @@
 }
 
 .staff__card-picture {
-  flex: 0 0 70px;
-  margin-right: 16px;
+  flex: 0 0 4.375rem;
+  margin-right: 1rem;
   position: relative;
 }
 
 .staff__card-picture img,
 .staff__card-picture-wrapper img {
-  width: 64px;
-  height: 64px;
-  border: 1px solid white;
+  width: 4rem;
+  height: 4rem;
+  border: 0.0625rem solid white;
   border-radius: 50%;
   object-fit: cover;
 }
 .staff__card-picture-wrapper {
-  width: 64px;
-  height: 64px;
+  width: 4rem;
+  height: 4rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-radius: 50%;
   display: flex;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.55);
   align-items: center;
@@ -89,7 +93,7 @@
 }
 
 .staff__card-details {
-  padding-right: 150px;
+  padding-right: 9.375rem;
   flex: 1;
 }
 
@@ -98,20 +102,20 @@
 }
 
 .staff__card .icon {
-  flex: 0 0 10px;
+  flex: 0 0 0.625rem;
 }
 
 #any-staff .staff__card-picture-wrapper {
-  width: 46px;
-  height: 46px;
-  font-size: 24px;
+  width: 2.875rem;
+  height: 2.875rem;
+  font-size: 1.5rem;
 }
 
 #any-staff img {
-  width: 46px;
-  border: 1px solid white;
-  border-radius: 24px;
-  height: 46px;
+  width: 4rem;
+  border: 0.0625rem solid white;
+  border-radius: 1.5rem;
+  height: 2.875rem;
   object-fit: cover;
 }
 
@@ -128,12 +132,12 @@
 }
 
 .content__card {
-  max-width: 500px;
-  margin-top: 40px;
+  max-width: 75vw;
+  margin-top: 2.5rem;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   display: inline-block;
 }
 
@@ -152,7 +156,7 @@
   font-weight: bold;
   border-radius: 1.25rem;
   border: none;
-  font-size: 16px;
+  font-size: 1rem;
   vertical-align: middle;
   text-align: center;
   cursor: pointer;

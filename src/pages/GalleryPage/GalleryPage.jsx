@@ -3,7 +3,7 @@ import Gallery from "../../components/Gallery/Gallery";
 function GalleryPage() {
   return (
     <>
-      <Gallery></Gallery>
+      <Gallery style={{ "padding-top": "3rem" }}></Gallery>
     </>
   );
 }

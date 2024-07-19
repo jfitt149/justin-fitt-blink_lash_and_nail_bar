@@ -17,12 +17,12 @@
 .steps__step {
   border-radius: none !important;
   border-bottom: 1px solid $Blink-Black;
-  padding: 24px;
-  margin-bottom: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
 }
 .steps__step.selected {
   border: none !important;
-  border-bottom: 2px solid $Blink-DarkPink !important;
+  border-bottom: 0.125rem solid $Blink-DarkPink !important;
   color: $Blink-Black !important;
 }
 
@@ -33,8 +33,8 @@
 .steps__step-title {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
   letter-spacing: 0.009em;
   color: $Blink-Black;
   font-weight: bold;
@@ -51,21 +51,21 @@
 
 .steps__step-name,
 .staff__card-name {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: $Blink-Black;
-  line-height: 26px;
+  line-height: 1.625rem;
   letter-spacing: 0.006em;
   font-weight: bold;
 }
 
 .button-back {
   background-color: rgba(0, 0, 0, 0.05);
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   margin-left: 1rem;
-  border-radius: 6px;
+  border-radius: 0.375rem;
   font-weight: bold;
-  font-size: 12px;
-  line-height: 24px;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
   display: block;
   width: fit-content;
 }
@@ -80,7 +80,7 @@
   color: #fff;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 3.75rem;
   z-index: 1;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .menu ul li {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   text-align: center;
 }
 
@@ -111,9 +111,9 @@
 
 .toggle-btn {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 24px;
+  top: 1.25rem;
+  left: 1.25rem;
+  font-size: 1.5rem;
   cursor: pointer;
   z-index: 2;
 }

@@ -12,6 +12,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    @include tablet {
+      padding-top: 3rem;
+    }
   }
 
   &__overlay {
