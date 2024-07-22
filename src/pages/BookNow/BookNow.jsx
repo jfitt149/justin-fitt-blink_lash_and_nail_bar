@@ -10,7 +10,13 @@ function BookNow({ serviceItems, cancel, location, staff }) {
         location={location}
         staff={staff}
       ></ServiceList> */}
-      <img src="/images/comming-soon.jpg" alt="comming-soon" />
+      <section className="wrapper">
+        <img
+          src="/images/coming_soon.jpg"
+          alt="coming-soon"
+          className="coming-soon"
+        />
+      </section>
     </>
   );
 }

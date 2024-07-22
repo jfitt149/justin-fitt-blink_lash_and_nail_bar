@@ -5,5 +5,12 @@
 
 .coming-soon {
   width: 100%;
-  padding-top: 3rem;
+  padding-top: 4rem;
+  object-fit: contain;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
