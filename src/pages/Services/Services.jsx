@@ -8,7 +8,7 @@ function Services() {
         <h1 className="services__title">Services</h1>
         <img
           className="services__img"
-          src={`${apiUrl}images/lashes_7.jpg`}
+          src={`/images/lashes_7.jpg`}
           alt="rainbow-lashes"
         />
         <h2 className="services__subtitle">Lashes</h2>
@@ -44,7 +44,7 @@ function Services() {
         <p className="services__item">Add 10.00 UV/ LED Method</p>
         <img
           className="services__img"
-          src={`${apiUrl}images/nails_1.jpg`}
+          src={`/images/nails_1.jpg`}
           alt="rainbow-lashes"
         />
         <h2 className="services__subtitle">Nails</h2>
@@ -70,7 +70,7 @@ function Services() {
         </p>
         <img
           className="services__img"
-          src={`${apiUrl}images/footcare.jpg`}
+          src={`/images/footcare.jpg`}
           alt="rainbow-lashes"
         />
         <h2 className="services__subtitle">Footcare</h2>
@@ -93,7 +93,7 @@ function Services() {
         </p>
         <img
           className="services__img"
-          src={`${apiUrl}images/tanning.jpg`}
+          src={`/images/tanning.jpg`}
           alt="rainbow-lashes"
         />
         <h2 className="services__subtitle">Tanning</h2>

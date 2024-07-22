@@ -47,6 +47,7 @@ function ContactForm() {
       .then(
         () => {
           console.log("SUCCESS!");
+          alert("Your email has been sent successfully! 😊");
           navigate("/");
         },
         (error) => {

@@ -4,12 +4,13 @@ import ServiceList from "../../components/Booking/ServiceList/ServiceList";
 function BookNow({ serviceItems, cancel, location, staff }) {
   return (
     <>
-      <ServiceList
+      {/* <ServiceList
         serviceItems={serviceItems}
         cancel={cancel}
         location={location}
         staff={staff}
-      ></ServiceList>
+      ></ServiceList> */}
+      <img src="/images/comming-soon.jpg" alt="comming-soon" />
     </>
   );
 }

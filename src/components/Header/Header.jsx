@@ -27,7 +27,7 @@ function Header() {
         <Link to={"/"} className="nav__logo-wrapper">
           <img
             className={`nav__logo ${getClass()}`}
-            src={`${apiUrl}/images/logo-header.svg`}
+            src={`/images/logo-header.svg`}
             alt="logo-img"
           />
         </Link>

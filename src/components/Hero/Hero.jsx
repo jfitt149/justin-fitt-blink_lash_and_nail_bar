@@ -10,7 +10,7 @@ function Hero() {
         <div className="hero__content">
           <img
             className="hero__logo"
-            src={`${apiUrl}images/logo.svg`}
+            src={`/images/logo.svg`}
             alt="blink-lash-and-nail-bar-logo"
           />
           <p className="hero__content--slogan">
@@ -34,7 +34,7 @@ function Hero() {
           {" "}
           <img
             className="hero__img"
-            src={`${apiUrl}images/lashes_7.jpg`}
+            src={`/images/lashes_7.jpg`}
             alt="rainbow-lashes"
           />
           <div className="hero__see-more-wrapper">

@@ -26,7 +26,7 @@ function GalleryPreview() {
             <div key={number} className="gallery-preview__item">
               <img
                 className="gallery-preview__image"
-                src={`${apiUrl}/images/gallery/gallery_${number}.jpg`}
+                src={`/images/gallery/gallery_${number}.jpg`}
                 alt={`nails-gallery-image-${number}`}
               />
             </div>

@@ -23,7 +23,7 @@ function Gallery() {
           <img
             key={num}
             className="gallery__image"
-            src={`${apiUrl}images/gallery/nails_${num}.jpg`}
+            src={`/images/gallery/nails_${num}.jpg`}
             alt={`gallery-image-nails-${num}`}
           />
         ))}
@@ -31,7 +31,7 @@ function Gallery() {
           <img
             key={num}
             className="gallery__image"
-            src={`${apiUrl}images/gallery/lashes_${num}.jpg`}
+            src={`/images/gallery/lashes_${num}.jpg`}
             alt={`gallery-image-lashes-${num}`}
           />
         ))}
