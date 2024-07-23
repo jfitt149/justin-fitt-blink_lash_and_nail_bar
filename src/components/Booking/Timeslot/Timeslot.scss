@@ -34,3 +34,8 @@ h2 {
 .availability button.available-time:hover {
   border-color: $Blink-DarkPink;
 }
+
+.content-main {
+  max-width: 64rem;
+  margin: auto;
+}

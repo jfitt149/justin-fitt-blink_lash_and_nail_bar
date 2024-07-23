@@ -8,6 +8,9 @@
   margin: 0 1rem 1rem 1rem;
   @include tablet {
     padding-top: 5rem;
+    max-width: 64rem;
+    margin: auto;
+    margin-bottom: 1.5rem;
   }
   &__title {
     margin-top: 1rem;

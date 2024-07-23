@@ -38,6 +38,11 @@ a:visited {
   background-image: url("/images/back-arrow.svg");
 }
 
+main {
+  max-width: 64rem;
+  margin: auto;
+}
+
 .content {
   display: flex;
   @include tablet {

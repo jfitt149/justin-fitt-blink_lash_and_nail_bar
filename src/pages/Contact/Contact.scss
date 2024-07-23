@@ -4,6 +4,8 @@
 @import "../src/styles/partials/variables";
 .contact {
   padding: 1rem 1rem 1rem 1rem;
+  max-width: 64rem;
+  margin: auto;
 
   &__flex {
     @include tablet {

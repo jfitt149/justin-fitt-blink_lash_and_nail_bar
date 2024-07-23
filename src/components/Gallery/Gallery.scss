@@ -9,6 +9,8 @@
 
   @include tablet {
     padding-top: 5rem;
+    max-width: 64rem;
+    margin: auto;
   }
 
   &__title {

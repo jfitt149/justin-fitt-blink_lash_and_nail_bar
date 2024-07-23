@@ -24,9 +24,19 @@ function App() {
   const [staff, setStaff] = useState([]);
   const [bookingId, setBookingId] = useState([]);
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   setHamburgerState(false);
 
   const serverUrl = import.meta.env.VITE_API_URL;
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = serverUrl + "images/logo.svg";
+    img.onload = () => {
+      setIsLoaded(true);
+    };
+  }, [serverUrl + "images/logo.svg"]);
 
   const getServiceItems = async () => {
     try {
@@ -61,6 +71,20 @@ function App() {
     getLocation();
     getStaff();
   }, []);
+
+  if (isLoaded === false) {
+    return (
+      <>
+        <section className="loading">
+          <p className="loading__content">
+            Site is being hosted on a free server for demonstration purposes.
+            Please allow 50 seconds for initial loading time.
+          </p>
+          <div className="loader"></div>
+        </section>
+      </>
+    );
+  }
 
   return (
     <>
