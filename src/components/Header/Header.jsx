@@ -1,6 +1,6 @@
 import "./Header.scss";
 import Hamburger from "../Hamburger/Hamburger";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Header() {
@@ -19,9 +19,7 @@ function Header() {
     }
   };
 
-  const toggleHamburger = () => {
-    setHamburgerState(!hamburgerState);
-  };
+  const toggleHamburger = () => setHamburgerState(!hamburgerState);
 
   return (
     <header>
@@ -35,8 +33,9 @@ function Header() {
         </Link>
 
         <ul
-          className="nav__list"
-          style={{ display: `${hamburgerState ? "flex" : "none"}` }}
+          className={`nav__list ${
+            hamburgerState ? "nav__list--open" : "nav__list--closed"
+          }`}
         >
           <li>
             <Link to={"/"}>

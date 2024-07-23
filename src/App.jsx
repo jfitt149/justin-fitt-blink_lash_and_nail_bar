@@ -24,9 +24,19 @@ function App() {
   const [staff, setStaff] = useState([]);
   const [bookingId, setBookingId] = useState([]);
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   setHamburgerState(false);
 
   const serverUrl = import.meta.env.VITE_API_URL;
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = serverUrl + "images/logo.svg";
+    img.onload = () => {
+      setIsLoaded(true);
+    };
+  }, [serverUrl + "images/logo.svg"]);
 
   const getServiceItems = async () => {
     try {
@@ -62,62 +72,78 @@ function App() {
     getStaff();
   }, []);
 
+  if (isLoaded === false) {
+    return (
+      <>
+        <section className="loading">
+          <p className="loading__content">
+            Site is being hosted on a free server for demonstration purposes.
+            Please allow 50 seconds for initial loading time.
+          </p>
+          <div className="loader"></div>
+        </section>
+      </>
+    );
+  }
+
   return (
     <>
       <BrowserRouter>
         <Header></Header>
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="/booknow"
+              element={
+                <BookNow
+                  serviceItems={serviceItems}
+                  cancel={cancel}
+                  location={location}
+                  staff={staff}
+                />
+              }
+            />
+            <Route
+              path="/availability/:staffId/:serviceVariationId"
+              element={
+                <Timeslot
+                  serviceItems={serviceItems}
+                  cancel={cancel}
+                  location={location}
+                  staff={staff}
+                  bookingId={bookingId}
+                />
+              }
+            ></Route>
+            <Route
+              path="/contactDetails"
+              element={
+                <ContactDetails
+                  serviceItems={serviceItems}
+                  staff={staff}
+                  location={location}
+                />
+              }
+            ></Route>
+            <Route
+              path="/booking/:bookingId"
+              element={
+                <ConfirmBooking
+                  location={location}
+                  staff={staff}
+                  serviceItems={serviceItems}
+                />
+              }
+            ></Route>
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div>
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route
-            path="/booknow"
-            element={
-              <BookNow
-                serviceItems={serviceItems}
-                cancel={cancel}
-                location={location}
-                staff={staff}
-              />
-            }
-          />
-          <Route
-            path="/availability/:staffId/:serviceVariationId"
-            element={
-              <Timeslot
-                serviceItems={serviceItems}
-                cancel={cancel}
-                location={location}
-                staff={staff}
-                bookingId={bookingId}
-              />
-            }
-          ></Route>
-          <Route
-            path="/contactDetails"
-            element={
-              <ContactDetails
-                serviceItems={serviceItems}
-                staff={staff}
-                location={location}
-              />
-            }
-          ></Route>
-          <Route
-            path="/booking/:bookingId"
-            element={
-              <ConfirmBooking
-                location={location}
-                staff={staff}
-                serviceItems={serviceItems}
-              />
-            }
-          ></Route>
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
         <Footer></Footer>
       </BrowserRouter>
     </>

@@ -38,7 +38,7 @@ function Hero() {
             alt="rainbow-lashes"
           />
           <div className="hero__see-more-wrapper">
-            <Link className="hero__see-more" to={"/bookow"}>
+            <Link className="hero__see-more" to={"/booknow"}>
               BOOK NOW
             </Link>
           </div>

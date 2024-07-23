@@ -4,7 +4,7 @@
 @import "../src/styles/partials/variables";
 
 .contact-form {
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 
 .sq-form-control {
@@ -14,12 +14,12 @@
 
 .sq-form-control input,
 .sq-form-control textarea {
-  font-size: 16px;
-  line-height: 24px;
-  padding: 11px 16px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
-  margin-bottom: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0.6875rem 1rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
 }
 
 .sq-form-control input::placeholder,
@@ -28,31 +28,31 @@
 }
 
 .half-width:focus {
-  border: 1px solid $Blink-DarkPink !important;
+  border: 0.0625rem solid $Blink-DarkPink !important;
 }
 
 .sq-form-control .half-width {
-  flex: 1 0 300px;
-  margin-right: 20px;
+  flex: 1 0 18.75rem;
+  margin-right: 1.25rem;
 }
 
 .sq-form-control textarea {
   width: 100%;
-  margin-right: 20px;
+  margin-right: 1.25rem;
   resize: none;
   font-family: inherit;
 }
 
 .sq-form-control .contact-button.contact-btn-primary {
   width: 100%;
-  margin-right: 20px;
+  margin-right: 1.25rem;
   color: $Blink-Black;
   background-color: $Rose-White;
   font-weight: bold;
   border-radius: 1.25rem;
   border: none;
-  font-size: 16px;
-  padding: 17px;
+  font-size: 1rem;
+  padding: 1.0625rem;
   text-align: center;
   cursor: pointer;
   height: auto;

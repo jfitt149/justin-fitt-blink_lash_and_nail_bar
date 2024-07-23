@@ -4,6 +4,17 @@
 @import "../src/styles/partials/variables";
 .contact {
   padding: 1rem 1rem 1rem 1rem;
+  max-width: 64rem;
+  margin: auto;
+
+  &__flex {
+    @include tablet {
+      display: flex;
+      flex-direction: row; /* Stack horizontally on tablet and up */
+      justify-content: center; /* Center the map and info horizontally */
+      align-items: center; /* Center the map and info vertically */
+    }
+  }
 
   &__map-wrapper {
     position: relative;
@@ -11,6 +22,12 @@
     height: 0;
     overflow: hidden;
     margin: 1rem -1rem 0 -1rem;
+    @include tablet {
+      padding-bottom: 0;
+      height: 15rem;
+      width: 50%; /* Adjust width to 50% for horizontal stacking */
+      margin: 1rem; /* Adjust margins */
+    }
   }
   &__map-wrapper iframe {
     position: absolute;
@@ -23,7 +40,11 @@
     display: flex;
     justify-content: space-between;
     @include tablet {
-      display: auto;
+      width: 50%; /* Adjust width to 50% for horizontal stacking */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
   &__subheader {

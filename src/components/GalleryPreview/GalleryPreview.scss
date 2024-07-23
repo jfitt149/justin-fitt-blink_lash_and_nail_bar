@@ -18,6 +18,11 @@
     height: 75vw;
 
     object-fit: cover;
+
+    @include tablet {
+      width: 50%;
+      height: 50vw;
+    }
   }
 
   &__see-more {
@@ -38,6 +43,10 @@
     color: $Blink-Black;
     &:hover {
       background-color: #b4aead;
+    }
+    @include tablet {
+      max-width: 50%;
+      margin: 1rem auto;
     }
   }
 }
